@@ -6,13 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Eagles Eye Eats helps you discover the best restaurants in Karachi, Pakistan. Browse top eateries by area, cuisine, and category." />
+    content="Gul Shinwari Restaurant in 
+           North Nazimabad is a must-visit. Famous for its simple yet rich
+            flavors, Gul Shinwari has earned a loyal following among Karachi’s food
+            lovers who can’t get enough of its traditional dishes." />
   <meta
     name="keywords"
-    content="Karachi restaurants, best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
+    content=" Gul Shinwari North Nazimabad,Gul Shinwari,North Nazimabad,Desi food,chapli kebab and namkeen karahi" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
-  <title>Eagles Eye Eats | Discover the Best Restaurants in Karachi</title>
+  <title>Eagles Eye Eats | gul shinwari</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 
@@ -29,9 +32,9 @@
     <div class="container">
       <!-- Breadcrumb -->
       <nav class="breadcrumb">
-        <a href="../../index.html">Home</a>
+        <a href="<?php echo BASE_URL ?>">Home</a>
         <span>›</span>
-        <a href="../NorthNazimabad10.html">North Nazimabad</a>
+        <a href="<?php echo BASE_URL ?>files/northnazimabad/RestaurantsinNorthNazimabad.php">North Nazimabad</a>
         <span>›</span>
         <span>Gul Shinwari</span>
       </nav>
@@ -40,19 +43,21 @@
         <!-- LEFT CONTENT -->
         <div class="restaurant-info">
           <h1 class="restaurant-title">
-            Gul Shinwari North Nazimabad – Authentic Pashtun Desi Food Experience
+            Gul Shinwari North Nazimabad
           </h1>
+          
 
           <div class="restaurant-meta">
             <span>⭐ 4.2 Rating</span>
             <span>🍽️ Pakistani / Desi food</span>
-            <span>📍 North Nazimabad</span>
             <span>4,500+ Reviews</span>
           </div>
 
           <p class="restaurant-description">
-            If you’re someone who truly appreciates rich, traditional desi food, Gul Shinwari Restaurant in North Nazimabad is a place you shouldn’t miss. Known for its simple yet deeply flavorful cooking style, this spot has built a strong reputation among Karachi’s food lovers.
-          </p>
+           If you desire truly authentic, original desi food, Gul Shinwari Restaurant in 
+           North Nazimabad is a must-visit. Famous for its simple yet rich
+            flavors, Gul Shinwari has earned a loyal following among Karachi’s food
+            lovers who can’t get enough of its traditional dishes.</p>
 
           <!-- CTA Buttons -->
           <div class="restaurant-actions">
@@ -64,14 +69,14 @@
         <!-- RIGHT IMAGE -->
         <div class="restaurant-image">
           <img
-            src="../images/north-nazimabad.PNG"
-            alt="Kolachi Restaurant Karachi" />
+            src="../images/gul_shinwari.PNG"
+            alt="gul shinwari family seating area" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================
+  <!-- ========================
      TOP AD
 ========================= -->
   <!-- <section class="section">
@@ -91,12 +96,18 @@
           <h2>About Gul Shinwari</h2>
 
           <p>
-            <strong>Gul Shinwari</strong> is widely recognized for bringing authentic Pashtun-style cuisine to Karachi. Unlike many typical desi food places that rely heavily on spices, this restaurant focuses on keeping things minimal — letting the natural flavor of the meat shine.
+            <strong>Gul Shinwari</strong> is really well established and known in Karachi for its Pashthani style food. This place does not use a
+             lot of spices like desi restaurants do. Instead Gul Shinwari keeps things simple. Lets the original taste of the meat stand out.
           </p>
           <p>
-            Their cooking style is all about simplicity and authenticity. You won’t find overly greasy or masala-loaded dishes here. Instead, the taste comes from high-quality meat, traditional techniques, and perfectly balanced seasoning.
-          </p>
-          <p>The restaurant has become especially popular in North Nazimabad, attracting both families and serious food enthusiasts who want something different from the usual karahi and BBQ spots.</p>
+            The way they cook is about being real and balanced. You will not find food that's too greasy or has too
+             much masala at Gul Shinwari. Every dish at Gul Shinwari shows that they use quality meat and traditional
+              ways of cooking. They also make sure that the seasoning is just right which makes the food taste real and good.</p>
+
+          <p>Gul Shinwari is in North Nazimabad and people like it. Families and people who like food go to Gul Shinwari
+             because it is different, from karahi and BBQ places. Gul Shinwari is a place where simple food meets taste, which
+              makes every meal special. Gul Shinwari is a place to eat Pashtun style food.</p>
+
 
           <h2>Why Visit This Restaurant?</h2>
           <ul class="restaurant-highlights">
@@ -116,24 +127,22 @@
 
           <ul class="reviews-list">
             <li>The chapli kebab is often described as unmatched in taste and texture</li>
-            <li>The namkeen karahi offers a completely different experience compared to regular karahi</li>
-            <li>Meat quality is noticeably fresh, which adds to the overall flavor</li>
-            <li>Family seating is available with air-conditioned space, making it comfortable for dine-in</li>
-            <li>During peak hours, waiting time can be slightly longer due to high demand</li>
+            <li>Taste is outstanding plus the variety is good. Little bit expensive though as compared to quantity with price</li>
+            <li>Gull Shinwari – A Must-Visit for Mutton Lovers</li>
+            <li>Everything about this place is amazing, the atmosphere where you can either sit outside or in their pashtoon style lounge.</li>
+            <li>Ample seating indoor and out which were all full. This shows it is a very popular spot. Meat is tender and juicy but most importantly fresh</li>
           </ul>
 
           <h3>Best Time to Visit</h3>
           <p>
-            The restaurant gets quite busy during dinner hours, especially on weekends. If you want to avoid waiting, visiting earlier in the evening is a better option.
+            The place gets quite crowdy during dinner hours, especially 
+            on weekends. If you want to avoid waiting, visiting earlier in the evening is a better option for families.
           </p>
 
 
           <h3>Final Thoughts</h3>
           <p>
-            If you’re looking to explore authentic desi food beyond the usual flavors,
-            <strong>Gul Shinwari North Nazimabad</strong> is definitely worth visiting.
-            It’s not just about eating — it’s about experiencing a traditional style of
-            cooking that focuses on quality, simplicity, and real taste.
+           If you want to try Indian and Pakistani food that is not the same old thing you should go to Gul Shinwari in North Nazimabad. Gul Shinwari is a place to visit because it is not just about the food. It is about having a good time with traditional food that is made with good ingredients is simple and tastes really good. Gul Shinwari is about the taste of traditional food, at Gul Shinwari.
           </p>
 
 

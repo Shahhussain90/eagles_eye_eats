@@ -24,8 +24,8 @@
           <input
             type="search"
             id="searchInput"
-            placeholder="Search restaurants by name, cuisine, or area"
-            aria-label="Search restaurants by name, cuisine, or area"
+            placeholder="Search by their name, cuisine, rating, or even area"
+            aria-label="Search by their name, cuisine, rating, or even area"
           />
         </form>
         <!-- Search Results Dropdown -->

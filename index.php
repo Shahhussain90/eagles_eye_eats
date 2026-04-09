@@ -9,7 +9,7 @@
     content=" Give up the search. Start enjoying. Need a restaurant in Karachi for a family evening or want to discover some of the citys best-kept secrets? We've ranked Karachis restaurants by location, cuisine and vibe." />
   <meta
     name="keywords"
-    content="Karachi restaurants, karachi food, karachi's best restaurants,top 10 restaurants in karachi,best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
+    content="Karachi restaurants, karachi food, karachi's best restaurants,The Best Restaurants in Karachi,best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.eagleseyeeats.com/">
@@ -20,7 +20,7 @@
     ========================= -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <script type="application/ld+json">
+  <!-- <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -39,7 +39,7 @@
         "areaServed": "PK"
       }
     }
-  </script>
+  </script> -->
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -73,9 +73,11 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="badge">The Best Food Guide for Karachi</span>
-          <h1>The Best Restaurants in Karachi, Pakistan—Handpicked for You</h1>
+          <h1>The Best Restaurants in Karachi</h1>
+          <h4>Pakistan—Handpicked for You</h4>
           <p>
-            Give up the search. Start enjoying. Need a restaurant in Karachi for a family evening or want to discover some of the citys best-kept secrets? We've ranked Karachis restaurants by location, cuisine and vibe.
+            Give up the search. Start enjoying. Need a restaurant in Karachi for a family evening or want to discover some of the
+            citys best-kept secrets? We've ranked The Best Restaurants in Karachi by location, cuisine and vibe.
           </p>
 
           <form
@@ -116,46 +118,47 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Explore Karachi’s Most Popular Food Areas</h2>
+            <h2 class="section-title">Explore Karachi’s Most visited and loved places by area</h2>
             <p class="section-subtitle">
-             Discover top restaurants in Karachi’s most searched neighborhoods. Browse by area to find the best eateries, cafes, and dining spots each location has to offer.
+              Discover top restaurants in Karachi’s most searched areas.
+              see by area to find the best eateries, cafes, and dining spots each location has to offer.
             </p>
           </div>
           <!-- <a class="btn btn-outline" href="#">View All Areas</a> -->
         </div>
 
         <div class="grid areas-grid">
-          <a class="tile" href="<?php echo BASE_URL; ?>files/northnazimabad/NorthNazimabad10.php">
+          <a class="tile" href="<?php echo BASE_URL; ?>files/northnazimabad/RestaurantsinNorthNazimabad.php">
             <div class="thumb">
-              <img src="files/images/north-nazimabad.PNG" />
+              <img src="files/images/north-nazimabad.PNG" alt="a picture of north nazimabad featuring five star chowrangi and kati pahari" />
             </div>
             <div class="content">
               <p class="area-name">North Nazimabad</p>
             </div>
           </a>
           <a class="tile" href="#">
-            <div class="thumb"><img src="files/images/clifton.jpg" /></div>
+            <div class="thumb"><img src="files/images/clifton.jpg" alt="clifton people are playing at beach" /></div>
             <div class="content">
               <p class="area-name">Clifton</p>
             </div>
           </a>
           <a class="tile" href="#">
             <div class="thumb">
-              <img src="files/images/Bahadurabad Chorangi.jpg" />
+              <img src="files/images/Bahadurabad Chorangi.jpg" alt="bahadurabad chowrangi food street" />
             </div>
             <div class="content">
               <p class="area-name">Bahadurabad</p>
             </div>
           </a>
           <a class="tile" href="#">
-            <div class="thumb"><img src="files/images/korangi.PNG" /></div>
+            <div class="thumb"><img src="files/images/korangi.PNG" alt="korangi" /></div>
             <div class="content">
               <p class="area-name">Korangi</p>
             </div>
           </a>
           <a class="tile" href="#">
             <div class="thumb">
-              <img src="files/images/dha.PNG" />
+              <img src="files/images/dha.PNG" alt="showcases dha kolachi restaurants" />
             </div>
             <div class="content">
               <p class="area-name">DHA</p>
@@ -163,7 +166,7 @@
           </a>
           <a class="tile" href="#">
             <div class="thumb">
-              <img src="files/images/hussainabad.PNG" />
+              <img src="files/images/hussainabad.PNG" alt="husainabad food street" />
             </div>
             <div class="content">
               <p class="area-name">Bahadurabad</p>
@@ -377,64 +380,59 @@
     <!-- =========================
          About / Contact Mini Sections
     ========================== -->
-   <section class="section about-enhanced" id="about">
-  <div class="container about-container">
-    <div class="section-header about-header">
-      <div class="about-header-content">
-        <h2 class="section-title about-title">
-          About Eagles Eye Eats – Karachi Restaurant Guide
-        </h2>
+    <section class="section about-enhanced" id="about">
+      <div class="container about-container">
+        <div class="section-header about-header">
+          <div class="about-header-content">
+            <h3 class="section-title about-title">
+              About Eagles Eye Eats – Karachi Restaurant Guide
+            </h3>
 
-        <p class="section-subtitle about-subtitle">
-          Eagles Eye Eats is a Karachi-based restaurant directory helping you 
-          discover the best restaurants, cafes, and eateries across every area 
-          of the city — quickly and effortlessly.
-        </p>
+            <p class="section-subtitle about-subtitle">
+              Eagles Eye Eats is a Karachi-based restaurant directory helping you
+              discover the best restaurants, cafes, and eateries across every area
+              of the city — quickly and effortlessly.
+            </p>
 
-        <!-- Feature Badges -->
-        <div class="about-features">
-          <span class="about-badge">✓ Browse by area in Karachi</span>
-          <span class="about-badge">✓ Filter by cuisine & category</span>
-          <span class="about-badge">✓ Discover trending restaurants</span>
-          <span class="about-badge">✓ SEO-optimized listings</span>
+            <!-- Feature Badges -->
+            <div class="about-features">
+              <span class="about-badge">✓ Browse by area in Karachi</span>
+              <span class="about-badge">✓ Filter by cuisine & category</span>
+              <span class="about-badge">✓ Discover trending restaurants</span>
+              <span class="about-badge">✓ SEO-optimized listings</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Panel -->
+        <div class="footer-panel about-panel">
+          <div class="about-content">
+            <p class="about-text">
+              Eagles Eye Eats is a website that helps people find restaurants in Karachi.
+              It is easy to use. You can find what you are looking for really fast.
+              You can look for the restaurants in North Nazimabad or the best cafes in DHA.
+              You can even find places to eat that're not well known near your home.
+              Our website puts everything in one place so it is easy to find what you want.
+            </p>
+
+            <p class="about-text">
+              We make lists of restaurants, by area. We also let you filter by the kind of food you like and how popular the restaurant is.
+              Eagles Eye Eats wants to help people who love food find places to eat in Karachi.
+              At the time Eagles Eye Eats helps local restaurants get more people to know about them on the internet.
+            </p>
+
+
+          </div>
+
+          <!-- Highlight Box -->
+          <div class="about-highlight">
+            <h2>
+              The Best Restaurants in Karachi—A modern food directory for discovering the city’s top bistros, cafes, and hidden gems.
+            </h2>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Content Panel -->
-    <div class="footer-panel about-panel">
-      <div class="about-content">
-        <p class="about-text">
-          Eagles Eye Eats is built to make restaurant discovery in Karachi 
-          simple, fast, and reliable. Whether you're looking for the best 
-          restaurants in North Nazimabad, top cafes in DHA, or hidden food 
-          spots near you, our platform organizes everything in one place.
-        </p>
-
-        <p class="about-text">
-          We focus on structured, area-based listings combined with smart 
-          filtering so users can easily find restaurants based on location, 
-          cuisine, and popularity. Our goal is to help food lovers explore 
-          Karachi while helping local restaurants grow their online visibility.
-        </p>
-
-        <p class="about-text">
-          With a clean user experience and search engine optimized pages, 
-          Eagles Eye Eats is designed to rank for local food searches and 
-          deliver consistent organic traffic.
-        </p>
-      </div>
-
-      <!-- Highlight Box -->
-      <div class="about-highlight">
-        <p>
-          A modern Karachi food directory built for scalability, organic growth, 
-          and monetization through search traffic and AdSense.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
