@@ -179,7 +179,7 @@
     <!-- =========================
          Featured Restaurants Section
     ========================== -->
-    <section class="section" id="featured">
+    <!-- <section class="section" id="featured">
       <div class="container">
         <div class="section-header">
           <div>
@@ -266,7 +266,7 @@
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- AdSense In-content Placeholder -->
     <!-- <section class="section" aria-label="In-content advertisement">
@@ -283,7 +283,7 @@
     <!-- =========================
          Popular Categories Section
     ========================== -->
-    <section class="section" id="categories">
+    <!-- <section class="section" id="categories">
       <div class="container">
         <div class="section-header">
           <div>
@@ -319,7 +319,7 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- =========================
          Blog Section

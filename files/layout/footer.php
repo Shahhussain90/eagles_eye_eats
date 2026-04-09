@@ -10,19 +10,19 @@
               Discover Karachi’s best restaurants, cafes, and food spots by area
               and category.
             </p>
-            <div class="socials" aria-label="Social media links placeholder">
+            <!-- <div class="socials" aria-label="Social media links placeholder">
               <a href="#" aria-label="Facebook">f</a>
               <a href="#" aria-label="Instagram">ig</a>
               <a href="#" aria-label="X / Twitter">x</a>
               <a href="#" aria-label="YouTube">yt</a>
-            </div>
+            </div> -->
           </div>
 
           <div class="footer-panel">
             <h4>Quick Links</h4>
             <ul class="footer-links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="<?php echo BASE_URL; ?>/files/about-us.php">About</a></li>
+              <li><a href="<?php echo BASE_URL; ?>/files/contact.php">Contact</a></li>
               <li><a href="#">Privacy</a></li>
               <li><a href="#">Terms</a></li>
             </ul>

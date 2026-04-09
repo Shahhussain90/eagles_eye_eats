@@ -8,10 +8,10 @@
           <ul class="menu">
             <li><a href="<?php echo BASE_URL; ?>index.php">Home</a></li>
             <li><a href="<?php echo BASE_URL; ?>#areas">Areas</a></li>
-            <li><a href="<?php echo BASE_URL; ?>#categories">Categories</a></li>
+            <!-- <li><a href="<?php echo BASE_URL; ?>#categories">Categories</a></li> -->
             <li><a href="<?php echo BASE_URL; ?>#blog">Blog</a></li>
-            <li><a href="<?php echo BASE_URL; ?>#about">About</a></li>
-            <li><a href="<?php echo BASE_URL; ?>files/contact.php">Contact</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/files/about-us.php">About</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/files/contact.php">Contact</a></li>
           </ul>
         </nav>
 

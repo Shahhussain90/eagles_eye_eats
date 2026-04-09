@@ -96,14 +96,14 @@
           </article>
 
           <article class="card">
-            <div class="thumb">Restaurant Image</div>
+            <div class="thumb"><img src="../images/burger-lab.png" alt="Burger Lab Restaurant Karachi" /></div>
             <div class="content">
-              <h3 class="mini-title">Cafe Aroma Karachi</h3>
+              <h3 class="mini-title">Burger Lab</h3>
               <div class="meta">
-                <span>Cuisine: Cafe / Bakery</span><span>Area: Gulshan</span>
+                <span>Cuisine: Fast Food / Gourmet Burgers</span>
               </div>
-              <div class="rating">★ 4.6</div>
-              <a class="btn btn-primary view-btn" href="#">View Details</a>
+              <div class="rating">★ 4.0</div>
+              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/northnazimabad/burgerlab.php">View Details</a>
             </div>
           </article>
 

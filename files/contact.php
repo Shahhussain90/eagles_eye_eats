@@ -1,3 +1,30 @@
+
+<?php 
+   require_once 'connection.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if (isset($_POST['contact_btn'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+
+    $sql = "INSERT INTO contact_messages (name, email, message) VALUES ('$name', '$email', '$message')";
+    if ($con->query($sql) === TRUE) {
+      echo "<script>alert('Message sent successfully!');</script>";
+    } else {
+      echo "<script>alert('Error: " . $conn->error . "');</script>";
+    }
+
+  }
+  }
+
+
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -41,29 +68,24 @@
     <div class="contact-grid">
 
       <!-- FORM -->
-      <form class="contact-form">
+      <form class="contact-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 
         <div class="form-group">
           <label>Your Name</label>
-          <input type="text" placeholder="Enter your name" required />
+          <input type="text" placeholder="Enter your name" name="name" required />
         </div>
 
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="Enter your email" required />
-        </div>
-
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" placeholder="e.g. Add my restaurant" />
+          <input type="email" placeholder="Enter your email" name="email" required />
         </div>
 
         <div class="form-group">
           <label>Message</label>
-          <textarea rows="5" placeholder="Write your message..."></textarea>
+          <textarea rows="5" placeholder="Write your message..." name="message"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary contact-btn">
+        <button type="submit" name="contact_btn" class="btn btn-primary contact-btn">
           Send Message
         </button>
 
@@ -93,69 +115,10 @@
 
   </div>
 </section>
-    <!-- =========================
-       Footer
-  ========================== -->
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-panel">
-            <h3>Eagles Eye Eats</h3>
-            <p style="margin-top: 0; color: var(--muted)">
-              Discover Karachi’s best restaurants, cafes, and food spots by area
-              and category.
-            </p>
-            <div class="socials" aria-label="Social media links placeholder">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="Instagram">ig</a>
-              <a href="#" aria-label="X / Twitter">x</a>
-              <a href="#" aria-label="YouTube">yt</a>
-            </div>
-          </div>
-
-          <div class="footer-panel">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-panel">
-            <h4>Newsletter</h4>
-            <p style="margin-top: 0; color: var(--muted)">
-              Get weekly updates on new restaurants, top lists, and food guides.
-            </p>
-            <form class="newsletter" action="#">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                aria-label="Newsletter email"
-              />
-              <button class="btn btn-primary" type="submit">Subscribe</button>
-            </form>
-          </div>
-
-          <!-- <div class="footer-panel">
-            <h4>AdSense Footer Ad</h4>
-            <div class="ad-slot" style="min-height: 160px">
-              <div>
-                <span class="ad-label">Footer AdSense Unit</span>
-                <div>300 × 250 / Responsive Ad Placeholder</div>
-              </div>
-            </div>
-          </div> -->
-        </div>
-
-        <div class="copyright">
-          <span>© 2026 Eagles Eye Eats. All rights reserved.</span>
-          <span>Karachi, Pakistan</span>
-        </div>
-      </div>
-    </footer>
-
+  
+<?php
+    include_once 'layout/footer.php';
+    ?>
     <script src="../../index.js"></script>
   </body>
 </html>
