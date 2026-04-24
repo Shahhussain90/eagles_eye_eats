@@ -12,7 +12,7 @@
     content="Karachi restaurants, best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
-  <title>Eagles Eye Eats | Discover the Best Restaurants in Karachi</title>
+  <title>Eagles Eye Eats | Clifton</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 
@@ -38,9 +38,9 @@
 
     <section class="hero">
       <div class="container">
-        <h1 class="hero-title">Restaurants in North Nazimabad</h1>
+        <h1 class="hero-title">Restaurants in Clifton</h1>
         <p class="hero-subtitle">
-          you can find here the best Restaurants in north nazimabad with their in depth details, location, reviews and their number
+          you can find here the best restaurnats in Clifton with their in depth details, location, reviews and their number
         </p>
         <!-- <a class="btn btn-primary" href="#areas">Explore Restaurants</a> -->
       </div>
@@ -54,7 +54,7 @@
         <div class="section-header">
           <div>
             <h2 class="section-title">
-              Top 10 restaurants in North Nazimabad
+              Top 10 restaurants in Clifton
             </h2>
            
           </div>
@@ -66,15 +66,15 @@
           <!-- restaurant 1 -->
           <article class="card">
             <div class="thumb">
-              <img src="../images/gul_shinwari.PNG" alt="Gul Shinwari Restaurant Karachi" />
+              <img src="../images/aylanto.PNG" alt="Gul Shinwari Restaurant Karachi" />
             </div>
             <div class="content">
-              <h3 class="mini-title">Gul Shinwari Restaurant</h3>
+              <h3 class="mini-title">Café Aylanto</h3>
               <div class="meta">
-                <span>Cuisine: Desi</span>
+                <span>Cuisine: Mediterranean / Italian / Continental focus</span>
               </div>
-              <div class="rating">★ 4.2</div>
-              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/northnazimabad/gulshinwari.php">View Details</a>
+              <div class="rating">★ 4.1</div>
+              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/Clifton/Aylanto.php">View Details</a>
             </div>
           </article>
 
@@ -86,16 +86,16 @@
           <article class="card">
             <div class="thumb"> <img src="../images/ginsoy.PNG" alt="ginsoy Restaurant Karachi" /></div>
             <div class="content">
-              <h3 class="mini-title">Ginsoy</h3>
+              <h3 class="mini-title">Xander’</h3>
               <div class="meta">
-                <span>Cuisine: Chinese</span>
+                <span>Cuisine: Café / Continental / All-Day Dining</span>
               </div>
               <div class="rating">★ 4.3</div>
-              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/northnazimabad/ginsoy.php">View Details</a>
+              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/Clifton/xanders.php">View Details</a>
             </div>
           </article>
 
-          <article class="card">
+          <!-- <article class="card">
             <div class="thumb"><img src="../images/burger-lab.png" alt="Burger Lab Restaurant Karachi" /></div>
             <div class="content">
               <h3 class="mini-title">Burger Lab</h3>
@@ -103,7 +103,7 @@
                 <span>Cuisine: Fast Food / Gourmet Burgers</span>
               </div>
               <div class="rating">★ 4.0</div>
-              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/northnazimabad/burgerlab.php">View Details</a>
+              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/Clifton/burgerlab.php">View Details</a>
             </div>
           </article>
 
@@ -117,9 +117,9 @@
                 <span>Cuisine: Grilled Chicken / Healthy Dining</span>
               </div>
               <div class="rating">★ 4.2</div>
-              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/northnazimabad/nando.php">View Details</a>
+              <a class="btn btn-primary view-btn" href="<?php echo BASE_URL; ?>files/Clifton/nando.php">View Details</a>
             </div>
-          </article>
+          </article> -->
 
           <!-- <article class="card">
             <div class="thumb">Restaurant Image</div>

@@ -23,8 +23,8 @@
             <ul class="footer-links">
               <li><a href="<?php echo BASE_URL; ?>/files/about-us.php">About</a></li>
               <li><a href="<?php echo BASE_URL; ?>/files/contact.php">Contact</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
+              <li><a href="<?php echo BASE_URL; ?>/files/privacy.php">Privacy</a></li>
+              <li><a href="<?php echo BASE_URL; ?>/files/termsandconditions.php">Terms</a></li>
             </ul>
           </div>
 

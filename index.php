@@ -136,7 +136,7 @@
               <p class="area-name">North Nazimabad</p>
             </div>
           </a>
-          <a class="tile" href="#">
+          <a class="tile" href="<?php echo BASE_URL; ?>files/Clifton/RestaurantsinClifton.php">
             <div class="thumb"><img src="files/images/clifton.jpg" alt="clifton people are playing at beach" /></div>
             <div class="content">
               <p class="area-name">Clifton</p>

@@ -1,8 +1,15 @@
 const data = [
-  { name: "Cafe Aroma", area: "Gulshan", cuisine: "Cafe", url: "/restaurants/cafe-aroma.html" },
-  { name: "Spice Harbor", area: "DHA", cuisine: "Pakistani", url: "/restaurants/spice-harbor.html" },
-  { name: "BBQ Tonight", area: "Clifton", cuisine: "BBQ", url: "/restaurants/bbq-tonight.html" },
-  { name: "Burger Lab", area: "Bahadurabad", cuisine: "Fast Food", url: "/restaurants/burger-lab.html" }
+  // north nazimabad
+  { name: "Burger Lab ", area: "North Nazimabad", cuisine: "Fast Food", url: "files/northnazimabad/burgerlab.php" },
+  { name: "ginsoy", area: "North Nazimabad", cuisine: "Chinese", url: "files/northnazimabad/ginsoy.php" },
+  { name: "Nando ", area: "North Nazimabad", cuisine: "BBQ", url: "files/northnazimabad/Nando.php" },
+  { name: "Gul shinwari ", area: "Desi", cuisine: "Restaurant", url: "files/northnazimabad/gulshinwari.php" },
+
+  // clifton
+  { name: "Café Aylanto", area: "clifton", cuisine: "Italian/Continental/Mediterranean", url: "files/clifton/Aylanto.php" },
+  { name: "Xander", area: "clifton", cuisine: "Continental", url: "files/clifton/xanders.php" },
+
+  
 ];
 
 const input = document.getElementById("searchInput");
