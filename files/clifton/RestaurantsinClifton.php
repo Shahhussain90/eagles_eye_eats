@@ -4,15 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Eagles Eye Eats helps you discover the best restaurants in Karachi, Pakistan. Browse top eateries by area, cuisine, and category." />
+  <meta name="description" content="Discover the best restaurants in Clifton Karachi. Explore top cafes, fine dining spots, menus, reviews, and contact details in Clifton." />
   <meta
     name="keywords"
     content="Karachi restaurants, best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
-  <title>Eagles Eye Eats | Clifton</title>
+  <title>Best Restaurants in Clifton Karachi</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 
@@ -38,9 +36,9 @@
 
     <section class="hero">
       <div class="container">
-        <h1 class="hero-title">Restaurants in Clifton</h1>
+        <h1 class="hero-title">Best Restaurants in Clifton Karachi</h1>
         <p class="hero-subtitle">
-          you can find here the best restaurnats in Clifton with their in depth details, location, reviews and their number
+          Discover the best restaurants in Clifton Karachi with detailed reviews, full menus, exact locations, and contact information of the restaurant to help you choose the perfect place to eat.
         </p>
         <!-- <a class="btn btn-primary" href="#areas">Explore Restaurants</a> -->
       </div>
@@ -146,7 +144,9 @@
           </article>
         </div>
       </div>
+      
     </section>
+    
 
     <!-- AdSense In-content Placeholder -->
     <!-- <section class="section" aria-label="In-content advertisement">
@@ -167,6 +167,12 @@
       <div class="container">
         <div class="section-header">
           <div>
+            <p>
+Looking for more food spots? Explore our guide to 
+<a href="../northnazimabad/RestaurantsinNorthNazimabad.php">
+restaurants in North Nazimabad Karachi
+</a>.
+</p>
             <h2 class="section-title">Latest Blog Posts</h2>
             <p class="section-subtitle">
               Helpful guides, neighborhood highlights, and food discovery tips

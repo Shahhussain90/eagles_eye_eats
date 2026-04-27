@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Visit Nando’s North Nazimabad Karachi for famous peri peri chicken, healthy grilled meals, and a premium dine-in experience." />
-    <meta name="keywords"
-        content="Nando's North Nazimabad, Nando's Karachi, peri peri chicken Karachi, healthy restaurants Karachi, grilled chicken Karachi" />
+    <meta name="description" content="Visit Nando’s North Nazimabad Karachi for famous peri peri chicken, grilled meals, menu, reviews, price range, and location details. A top healthy dining option in Karachi." />
+    <meta name="keywords" content="Nando's North Nazimabad Karachi, Nando's Karachi menu, peri peri chicken Karachi, grilled chicken Karachi, Nando's Pakistan, healthy restaurants Karachi, Nando's North Nazimabad reviews, Nando's location Karachi" />
+    <!-- <link rel="canonical" href="https://www.eagleseyeeats.com/files/northnazimabad/nando.php" /> -->
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
-    <title>Eagles Eye Eats | Nando's</title>
+    <title>Nando’s North Nazimabad Karachi | Eagles Eye Eats</title>
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
 
@@ -208,7 +207,14 @@
                     </div>
                 </aside>
             </div>
+            <p>
+Looking for more options? Explore our list of 
+<a href="RestaurantsinNorthNazimabad.php">
+best restaurants in North Nazimabad Karachi
+</a>.
+</p>
         </div>
+        
     </section>
 
     <!-- =========================

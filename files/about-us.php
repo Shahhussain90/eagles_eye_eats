@@ -33,7 +33,8 @@
                     <span class="badge">About Us</span>
                     <h1 class="section-title">Discover Karachi, One Bite at a Time</h1>
                     <p class="section-subtitle about-subtitle">
-                        At Eagles Eye Eats, we make it easier to find the best restaurants in Karachi — whether it’s a well-known favorite or a hidden spot you haven’t tried yet.
+                        At Eagles Eye Eats, we make it easier to find the best restaurants in Karachi
+                         whether it’s a well-known favorite or a hidden spot you haven’t tried yet.
                     </p>
 
                     <div class="about-features">
@@ -89,7 +90,7 @@
 
             <!-- Highlight -->
             <div class="about-highlight">
-                Eagles Eye Eats isn’t just a directory — it’s your shortcut to finding great food in Karachi without the hassle.
+                Eagles Eye Eats isn’t just a directory it’s your shortcut to finding great food in Karachi without the hassle.
             </div>
 
         </div>

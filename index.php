@@ -6,40 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content=" Give up the search. Start enjoying. Need a restaurant in Karachi for a family evening or want to discover some of the citys best-kept secrets? We've ranked Karachis restaurants by location, cuisine and vibe." />
-  <meta
-    name="keywords"
-    content="Karachi restaurants, karachi food, karachi's best restaurants,The Best Restaurants in Karachi,best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
+    content="Discover the best restaurants in Karachi including Clifton, 
+    DHA, Hussainabad, Gulshan & North Nazimabad. Explore top cafes, desi food,
+     rooftop dining, and hidden places with reviews, locations, and their USPs." />
+  <meta name="keywords" content="best restaurants in Karachi, Karachi food guide, top restaurants Karachi, cafes in Karachi, restaurants in Clifton Karachi, restaurants in DHA Karachi, restaurants in North Nazimabad, best desi food Karachi, rooftop restaurants Karachi, Karachi restaurant directory, where to eat in Karachi, popular restaurants Karachi, hidden food spots Karachi" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.eagleseyeeats.com/">
-  <title>Eagles Eye Eats | The Best Food Guide for Karachi</title>
+  <title>Best Restaurants in Karachi (2026) | Top Cafes, Clifton, DHA & More</title>
 
   <!-- =========================
      Favicon
     ========================= -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <!-- <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Eagles Eye Eats",
-      "url": "https://www.eagleseyeeats.com/",
-      "logo": "https://www.eagleseyeeats.com/images/logo.png",
-      "sameAs": [
-        "https://www.facebook.com/EaglesEyeEats",
-        "https://twitter.com/EaglesEyeEats",
-        "https://www.instagram.com/EaglesEyeEats"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+92-XXX-XXXXXXX",
-        "contactType": "customer service",
-        "areaServed": "PK"
-      }
-    }
-  </script> -->
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -389,9 +369,9 @@
             </h3>
 
             <p class="section-subtitle about-subtitle">
-              Eagles Eye Eats is a Karachi-based restaurant directory helping you
-              discover the best restaurants, cafes, and eateries across every area
-              of the city — quickly and effortlessly.
+              Eagles Eye Eats is a Karachi based restaurant directory and guide helping you
+              find the best restaurants and cafes across every area
+              of the city without having to do many efforts.
             </p>
 
             <!-- Feature Badges -->
@@ -399,7 +379,7 @@
               <span class="about-badge">✓ Browse by area in Karachi</span>
               <span class="about-badge">✓ Filter by cuisine & category</span>
               <span class="about-badge">✓ Discover trending restaurants</span>
-              <span class="about-badge">✓ SEO-optimized listings</span>
+              <!-- <span class="about-badge">✓ </span> -->
             </div>
           </div>
         </div>
@@ -408,18 +388,18 @@
         <div class="footer-panel about-panel">
           <div class="about-content">
             <p class="about-text">
-              Eagles Eye Eats is a website that helps people find restaurants in Karachi.
+              Eagles Eye Eats is a list or a directory that helps people find restaurants in Karachi.
               It is easy to use. You can find what you are looking for really fast.
-              You can look for the restaurants in North Nazimabad or the best cafes in DHA.
-              You can even find places to eat that're not well known near your home.
+              You can look for the restaurants in North Nazimabad or the best cafes in DHA to desi food in husainabad.
+              You can even find places to eat that're not well known near your home but offer quality experiences.
               Our website puts everything in one place so it is easy to find what you want.
             </p>
 
-            <p class="about-text">
+            <!-- <p class="about-text">
               We make lists of restaurants, by area. We also let you filter by the kind of food you like and how popular the restaurant is.
               Eagles Eye Eats wants to help people who love food find places to eat in Karachi.
               At the time Eagles Eye Eats helps local restaurants get more people to know about them on the internet.
-            </p>
+            </p> -->
 
 
           </div>

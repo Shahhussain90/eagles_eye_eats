@@ -10,7 +10,7 @@
     content="Cafe Aylanto Clifton, Cafe Aylanto Karachi, Mediterranean restaurant Karachi, Italian food Karachi, fine dining Clifton Karachi, continental restaurants Karachi" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
-  <title>Eagles Eye Eats | Café Aylanto Clifton Karachi</title>
+  <title>Café Aylanto Clifton Karachi | Eagles Eye Eats</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 
@@ -204,6 +204,12 @@
         </aside>
 
       </div>
+      <p>
+        Looking for more options? Explore our list of
+        <a href="RestaurantsinNorthNazimabad.php">
+          best restaurants in North Nazimabad Karachi
+        </a>.
+      </p>
     </div>
   </section>
 

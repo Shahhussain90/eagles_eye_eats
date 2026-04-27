@@ -4,15 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Eagles Eye Eats helps you discover the best restaurants in Karachi, Pakistan. Browse top eateries by area, cuisine, and category." />
-  <meta
-    name="keywords"
-    content="Karachi restaurants, best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
+  <meta name="description" content="Discover the best restaurants in North Nazimabad Karachi including desi food, cafes, and fast food spots. Explore top places like Gul Shinwari, Ginsoy, Burger Lab and more with reviews, locations, and details." />
+  <meta name="keywords" content="best restaurants in North Nazimabad Karachi, North Nazimabad restaurants, cafes in North Nazimabad, Gul Shinwari restaurant, Ginsoy North Nazimabad, Burger Lab Karachi, Nando's North Nazimabad, desi food North Nazimabad, top food spots North Nazimabad" />
+  <!-- <link rel="canonical" href="https://www.eagleseyeeats.com/files/northnazimabad/RestaurantsinNorthNazimabad.php" /> -->
+   <!-- un comment this canonical when websie live -->
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
-  <title>Eagles Eye Eats | Discover the Best Restaurants in Karachi</title>
+  <title>best restaurants in North Nazimabad Karachi</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 
@@ -56,7 +54,7 @@
             <h2 class="section-title">
               Top 10 restaurants in North Nazimabad
             </h2>
-           
+
           </div>
           <!-- <a class="btn btn-outline" href="#">See More Restaurants</a> -->
         </div>

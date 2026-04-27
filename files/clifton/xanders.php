@@ -10,7 +10,7 @@
     content="Xanders Clifton, Xanders Karachi, cafes in Clifton Karachi, Xanders menu, best cafes Karachi, Clifton restaurants" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
-  <title>Eagles Eye Eats | Xander's Clifton</title>
+   <title>Xander's Clifton | Eagles Eye Eats</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 
@@ -204,6 +204,12 @@
         </aside>
 
       </div>
+      <p>
+        Looking for more options? Explore our list of
+        <a href="RestaurantsinNorthNazimabad.php">
+          best restaurants in North Nazimabad Karachi
+        </a>.
+      </p>
     </div>
   </section>
 
