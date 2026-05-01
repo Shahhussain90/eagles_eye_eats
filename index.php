@@ -319,18 +319,19 @@
 
         <div class="grid blog-grid">
           <article class="post">
-            <div class="thumb">Blog Thumbnail</div>
+            <div class="thumb">
+              <img src="files/images/blog-1-top10sfoods.jpg">
+            </div>
             <div class="content">
-              <h3>Top Rooftop Restaurants in Clifton for Sunset Dining</h3>
+              <h3>Top Street Food in Karachi</h3>
               <p>
-                Explore scenic dining spots in Clifton that pair great food
-                with a beautiful skyline experience.
+                Explore the wide variety of food of karachi from fast food to chinese cuisine
               </p>
               <a class="read-more" href="<?php echo BASE_URL; ?>files/blog/blog-1.php">Read More →</a>
             </div>
           </article>
 
-          <article class="post">
+          <!-- <article class="post">
             <div class="thumb">Blog Thumbnail</div>
             <div class="content">
               <h3>Best Cafes in Gulshan for Study, Work, and Catch-Ups</h3>
@@ -352,7 +353,7 @@
               </p>
               <a class="read-more" href="#">Read More →</a>
             </div>
-          </article>
+          </article> -->
         </div>
       </div>
     </section>
@@ -416,7 +417,7 @@
 
 
 
-    <section class="section" id="contact">
+    <!-- <section class="section" id="contact">
       <div class="container">
         <div class="section-header">
           <div>
@@ -450,7 +451,7 @@
           </form>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <!-- =========================

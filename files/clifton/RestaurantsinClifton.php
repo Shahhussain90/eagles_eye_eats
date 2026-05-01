@@ -82,7 +82,9 @@
 
 
           <article class="card">
-            <div class="thumb"> <img src="../images/ginsoy.PNG" alt="ginsoy Restaurant Karachi" /></div>
+            <div class="thumb"> <img src="../images/xander.PNG"
+     alt="xanders dining area"
+     style="width:100%; height:100%; object-fit:cover; object-position:bottom;" /></div>
             <div class="content">
               <h3 class="mini-title">Xander’</h3>
               <div class="meta">

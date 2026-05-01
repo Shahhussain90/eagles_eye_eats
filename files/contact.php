@@ -94,10 +94,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <!-- SIDE INFO -->
       <div class="contact-info">
 
-        <div class="info-box">
+        <!-- <div class="info-box">
           <h3>Email</h3>
           <p>support@eagleseyeeats.com</p>
-        </div>
+        </div> -->
 
         <div class="info-box">
           <h3>Location</h3>
