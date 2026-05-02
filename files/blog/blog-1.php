@@ -10,6 +10,7 @@
     <meta name="keywords" content="street food Karachi, best street food Karachi, bun kabab Karachi, chaat Karachi, Karachi food blog, cheap eats Karachi, local food Karachi" />
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 
     <title>Top Street Food in Karachi | Eagles Eye Eats</title>
 

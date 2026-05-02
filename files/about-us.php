@@ -12,6 +12,9 @@
         content="Karachi restaurants, best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <title>Eagles Eye Eats | Discover the Best Restaurants in Karachi</title>
     <link rel="stylesheet" href="../css/style.css" />
 </head>

@@ -10,6 +10,8 @@
     content="Karachi restaurants, best restaurants in Karachi, cafes in Karachi, Karachi food guide, restaurant directory Pakistan" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
   <title>Best Restaurants in Clifton Karachi</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -54,7 +56,7 @@
             <h2 class="section-title">
               Top 10 restaurants in Clifton
             </h2>
-           
+
           </div>
           <!-- <a class="btn btn-outline" href="#">See More Restaurants</a> -->
         </div>
@@ -83,8 +85,8 @@
 
           <article class="card">
             <div class="thumb"> <img src="../images/xander.PNG"
-     alt="xanders dining area"
-     style="width:100%; height:100%; object-fit:cover; object-position:bottom;" /></div>
+                alt="xanders dining area"
+                style="width:100%; height:100%; object-fit:cover; object-position:bottom;" /></div>
             <div class="content">
               <h3 class="mini-title">Xander’</h3>
               <div class="meta">
@@ -146,9 +148,9 @@
           </article>
         </div>
       </div>
-      
+
     </section>
-    
+
 
     <!-- AdSense In-content Placeholder -->
     <!-- <section class="section" aria-label="In-content advertisement">
@@ -165,16 +167,17 @@
     <!-- =========================
          Blog Section
     ========================== -->
-    <section class="section" id="blog">
+    <p>
+      Looking for more food spots? Explore our guide to
+      <a href="../northnazimabad/RestaurantsinNorthNazimabad.php">
+        restaurants in North Nazimabad Karachi
+      </a>.
+    </p>
+    <!-- <section class="section" id="blog">
       <div class="container">
         <div class="section-header">
           <div>
-            <p>
-Looking for more food spots? Explore our guide to 
-<a href="../northnazimabad/RestaurantsinNorthNazimabad.php">
-restaurants in North Nazimabad Karachi
-</a>.
-</p>
+           
             <h2 class="section-title">Latest Blog Posts</h2>
             <p class="section-subtitle">
               Helpful guides, neighborhood highlights, and food discovery tips
@@ -222,7 +225,7 @@ restaurants in North Nazimabad Karachi
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <!-- =========================

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($con->query($sql) === TRUE) {
       echo "<script>alert('Message sent successfully!');</script>";
     } else {
-      echo "<script>alert('Error: " . $conn->error . "');</script>";
+      echo "<script>alert('Error: " . $con->error . "');</script>";
     }
 
   }
@@ -40,6 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     />
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <title>Eagles Eye Eats | Discover the Best Restaurants in Karachi</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>

@@ -10,6 +10,8 @@
   <!-- <link rel="canonical" href="https://www.eagleseyeeats.com/files/northnazimabad/gulshinwari.php" /> -->
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
   <title>Gul Shinwari North Nazimabad | Eagles Eye Eats</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>

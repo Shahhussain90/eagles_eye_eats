@@ -7,6 +7,7 @@
     <meta name="description" content="Read the Terms and Conditions for Eagle's Eye Eats. Understand your rights, responsibilities, and usage policies when accessing our restaurant discovery platform."> <meta name="keywords" content="terms and conditions, Eagle's Eye Eats, website terms, user agreement, Karachi food guide">
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Terms and Conditions | Eagle's Eye Eats</title>
     <link rel="stylesheet" href="../css/style.css" />
 </head>

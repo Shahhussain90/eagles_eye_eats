@@ -10,6 +10,8 @@
     content="Cafe Aylanto Clifton, Cafe Aylanto Karachi, Mediterranean restaurant Karachi, Italian food Karachi, fine dining Clifton Karachi, continental restaurants Karachi" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
   <title>Café Aylanto Clifton Karachi | Eagles Eye Eats</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>

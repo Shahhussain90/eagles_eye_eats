@@ -7,6 +7,8 @@
    <title>Privacy Policy | Eagle's Eye Eats</title> <meta name="description" content="Read the Privacy Policy of Eagle's Eye Eats. Learn how we collect, use, and protect your personal data while using our restaurant discovery platform."> <meta name="keywords" content="privacy policy, Eagle's Eye Eats, data protection, cookies policy, user data Karachi">
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 

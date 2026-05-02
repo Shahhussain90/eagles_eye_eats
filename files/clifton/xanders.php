@@ -10,6 +10,8 @@
     content="Xanders Clifton, Xanders Karachi, cafes in Clifton Karachi, Xanders menu, best cafes Karachi, Clifton restaurants" />
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
    <title>Xander's Clifton | Eagles Eye Eats</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>

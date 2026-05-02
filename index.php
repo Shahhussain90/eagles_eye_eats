@@ -18,7 +18,7 @@
   <!-- =========================
      Favicon
     ========================= -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="files/images/favicon.ico" type="image/x-icon">
 
 
   <link rel="stylesheet" href="css/style.css" />
@@ -60,7 +60,7 @@
             citys best-kept secrets? We've ranked The Best Restaurants in Karachi by location, cuisine and vibe.
           </p>
 
-          <form
+          <!-- <form
             class="hero-search"
             action="#"
             role="search"
@@ -70,7 +70,7 @@
               placeholder="Search restaurants, cuisines, areas..."
               aria-label="Search restaurants, cuisines, or areas" />
             <button class="btn btn-primary" type="submit">Search Now</button>
-          </form>
+          </form> -->
 
           <div class="hero-cta-row">
             <span>✓ Local listings</span>

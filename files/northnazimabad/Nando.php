@@ -9,6 +9,8 @@
     <!-- <link rel="canonical" href="https://www.eagleseyeeats.com/files/northnazimabad/nando.php" /> -->
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
     <title>Nando’s North Nazimabad Karachi | Eagles Eye Eats</title>
     <link rel="stylesheet" href="../../css/style.css" />
 </head>

@@ -11,6 +11,8 @@
   <meta name="author" content="Eagles Eye Eats" />
   <meta name="robots" content="index, follow" />
   <title>best restaurants in North Nazimabad Karachi</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 
@@ -161,7 +163,13 @@
     <!-- =========================
          Blog Section
     ========================== -->
-    <section class="section" id="blog">
+     <p>
+              Looking for more food spots? Explore our guide to
+              <a href="../northnazimabad/RestaurantsinNorthNazimabad.php">
+                restaurants in North Nazimabad Karachi
+              </a>.
+            </p>
+    <!-- <section class="section" id="blog">
       <div class="container">
         <div class="section-header">
           <div>
@@ -212,7 +220,7 @@
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <!-- =========================

@@ -9,6 +9,8 @@
     <!-- <link rel="canonical" href="https://www.eagleseyeeats.com/files/northnazimabad/ginsoy.php" /> -->
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
     <title>Ginsoy North Nazimabad Karachi (Menu, Reviews, Location) | Eagles Eye Eats</title>
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
