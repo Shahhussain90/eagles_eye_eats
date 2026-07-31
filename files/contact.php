@@ -40,19 +40,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     />
     <meta name="author" content="Eagles Eye Eats" />
     <meta name="robots" content="index, follow" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="images/yaafta_favicon.ico">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="canonical" href="https://yaafta.com/files/contact">
     <title>Eagles Eye Eats | Discover the Best Restaurants in Karachi</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://quge5.com/88/tag.min.js" data-zone="249441" async data-cfasync="false"></script>
   </head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4R19BFTQEM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4R19BFTQEM');
+</script>
+
   <body>
     <!-- =========================
        Header / Navigation
   ========================== -->
-    <?php
-    include_once 'connection.php';
-    include $_SERVER['DOCUMENT_ROOT'] . '/eagles_eye_eats/files/layout/header.php'; 
-    ?>
+     <?php
+
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+  include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/files/layout/header.php';
+  ?>
 
     <section class="contact-page">
   <div class="container contact-container">
@@ -121,6 +140,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php
     include_once 'layout/footer.php';
     ?>
-    <script src="../../index.js"></script>
+    <script src="../index.js"></script>
   </body>
 </html>

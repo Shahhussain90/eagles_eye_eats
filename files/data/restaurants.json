@@ -1,0 +1,266 @@
+[
+    {
+        "slug": "Kda-1885coffee",
+        "name": "1885 Coffee - Kda",
+        "cuisine": "Coffee Shop",
+        "area": "Kda",
+        "page_url": "https://yaafta.com/files/categories/1885-Coffee",
+        "image_url": null
+    },
+    {
+        "slug": "kdascheme1-1885coffee",
+        "name": "1885 Coffee - KDA Scheme 1",
+        "cuisine": "Coffee Shop",
+        "area": "KDA Scheme 1",
+        "page_url": "https://yaafta.com/files/categories/1885-Coffee",
+        "image_url": null
+    },
+    {
+        "slug": "clifton-apollocoffee",
+        "name": "Apollo Coffee - Clifton",
+        "cuisine": "Coffee Shop",
+        "area": "Clifton",
+        "page_url": "https://yaafta.com/files/clifton/Apollo-cafe-clifton",
+        "image_url": null
+    },
+    {
+        "slug": "Clifton-Aylanto",
+        "name": "aylanto - Clifton",
+        "cuisine": "Mediterranean / Italian / Continental focus",
+        "area": "Clifton",
+        "page_url": "https://yaafta.com/files/clifton/Aylanto",
+        "image_url": null
+    },
+    {
+        "slug": "Clifton-Bar-bq-tonight-clifton",
+        "name": "bar-bq-tonight-clifton - Clifton",
+        "cuisine": "BBQ",
+        "area": "Clifton",
+        "page_url": "https://yaafta.com/files/clifton/Bar-bq-tonight-clifton",
+        "image_url": null
+    },
+    {
+        "slug": "Korangi-bosscafe",
+        "name": "BossCafe - Korangi",
+        "cuisine": "BBQ, handi, Chinese, steaks, burgers, and desserts",
+        "area": "Korangi",
+        "page_url": "https://yaafta.com/files/korangi/boss-cafe",
+        "image_url": null
+    },
+    {
+        "slug": "northnazimabad-burgerlab",
+        "name": "BurgerLab - North Nazimabad",
+        "cuisine": "Fast Food / Gourmet Burgers",
+        "area": "North Nazimabad",
+        "page_url": "https://yaafta.com/files/northnazimabad/burgerlab",
+        "image_url": null
+    },
+    {
+        "slug": "korangi-cafeabaseen",
+        "name": "Cafe Abaseen - Korangi Creek",
+        "cuisine": "Desi",
+        "area": "Korangi Creek",
+        "page_url": "https://yaafta.com/files/korangi/CafeAbaseen.php",
+        "image_url": null
+    },
+    {
+        "slug": "Clifton-Cafeflo",
+        "name": "cafeflo - Clifton",
+        "cuisine": "French / Continental",
+        "area": "Clifton",
+        "page_url": "https://yaafta.com/files/clifton/Cafeflo",
+        "image_url": null
+    },
+    {
+        "slug": "Dha-chefstablepakistan",
+        "name": "Chefstablepakistan - Dha",
+        "cuisine": "Modern Pakistani",
+        "area": "Dha",
+        "page_url": "https://yaafta.com/files/dha/Chefstablepakistan",
+        "image_url": null
+    },
+    {
+        "slug": "Dha-clocktower",
+        "name": "Clock Tower – Dha",
+        "cuisine": "Buffet / Pakistani, BBQ, Chinese & Continental",
+        "area": "Dha",
+        "page_url": "https://yaafta.com/files/dha/Clocktower",
+        "image_url": null
+    },
+    {
+        "slug": "Korangi-factorycafe",
+        "name": "FactoryCafe - Korangi",
+        "cuisine": "Parmesan Chicken, Turkish Kabab, sandwiches",
+        "area": "Korangi",
+        "page_url": "https://yaafta.com/files/korangi/Factorycafe",
+        "image_url": null
+    },
+    {
+        "slug": "dha-flamme",
+        "name": "Flamme - DHA",
+        "cuisine": "Rooftop Cafe / Continental & International",
+        "area": "DHA",
+        "page_url": "https://yaafta.com/files/dha/Flamme",
+        "image_url": null
+    },
+    {
+        "slug": "northnazimabad-ginsoy",
+        "name": "Ginsoy - North Nazimabad",
+        "cuisine": "Chinese",
+        "area": "North Nazimabad",
+        "page_url": "https://yaafta.com/files/northnazimabad/ginsoy",
+        "image_url": null
+    },
+    {
+        "slug": "northnazimabad-gulshinwari",
+        "name": "gulshinwari - North Nazimabad",
+        "cuisine": "Desi",
+        "area": "North Nazimabad",
+        "page_url": "https://yaafta.com/files/northnazimabad/gulshinwari",
+        "image_url": null
+    },
+    {
+        "slug": "Bahadurabad-HotpotMinistry",
+        "name": "hotpotministry - Bahadurabad",
+        "cuisine": "hotpot / Chinese / Thai-style dining",
+        "area": "Bahadurabad",
+        "page_url": "https://yaafta.com/files/bahadurabad/HotpotMinistry",
+        "image_url": null
+    },
+    {
+        "slug": "Dha-kolachi",
+        "name": "Kolachi - Dha",
+        "cuisine": "Pakistani, BBQ, Seafood, Continental, Fast Food",
+        "area": "Dha",
+        "page_url": "https://yaafta.com/files/dha/kolachi",
+        "image_url": null
+    },
+    {
+        "slug": "Bahadurabad-MandiHouse",
+        "name": "mandihouse - Bahadurabad",
+        "cuisine": "Arabic",
+        "area": "Bahadurabad",
+        "page_url": "https://yaafta.com/files/bahadurabad/mandihouse",
+        "image_url": null
+    },
+    {
+        "slug": "korangi-meerjee",
+        "name": "Meer Jee Restaurant - Korangi Creek",
+        "cuisine": "Pakistani / Desi food",
+        "area": "Korangi",
+        "page_url": "https://yaafta.com/files/korangi/Meerjee-Restaurant",
+        "image_url": null
+    },
+    {
+        "slug": "Bahadurabad-Mizaaj",
+        "name": "mizaaj - Bahadurabad",
+        "cuisine": "Pakistani Fine Dining",
+        "area": "Bahadurabad",
+        "page_url": "https://yaafta.com/files/bahadurabad/Mizaaj",
+        "image_url": null
+    },
+    {
+        "slug": "northnazimabad-nando",
+        "name": "Nando's - North Nazimabad",
+        "cuisine": "Grilled Chicken / Healthy Dining",
+        "area": "North Nazimabad",
+        "page_url": "https://yaafta.com/files/northnazimabad/Nando",
+        "image_url": null
+    },
+    {
+        "slug": "Bahadurabad-Ohmygrill",
+        "name": "ohmygrill - Bahadurabad",
+        "cuisine": "Gourmet Burger",
+        "area": "Bahadurabad",
+        "page_url": "https://yaafta.com/files/bahadurabad/Ohmygrill",
+        "image_url": null
+    },
+    {
+        "slug": "Dha-okra",
+        "name": "Okra - Dha",
+        "cuisine": "Mediterranean / European",
+        "area": "Dha",
+        "page_url": "https://yaafta.com/files/dha/Okra",
+        "image_url": null
+    },
+    {
+        "slug": "Bahadurabad-PekingChinese",
+        "name": "pekingchinese - Bahadurabad",
+        "cuisine": "Chinese",
+        "area": "Bahadurabad",
+        "page_url": "https://yaafta.com/files/bahadurabad/PekingChinese",
+        "image_url": null
+    },
+    {
+        "slug": "dha-routinecafe",
+        "name": "Routine - Specialty Coffee & Dining - DHa",
+        "cuisine": "Coffee Shop",
+        "area": "Dha",
+        "page_url": "https://yaafta.com/files/dha/Routine-Cafe",
+        "image_url": null
+    },
+    {
+        "slug": "dhaphase6-routine",
+        "name": "Routine - Specialty Coffee & Dining - DHA Phase 6",
+        "cuisine": "Coffee Shop",
+        "area": "DHA Phase 6",
+        "page_url": "https://yaafta.com/files/dha/Routine-Cafe",
+        "image_url": null
+    },
+    {
+        "slug": "Clifton-Sakura",
+        "name": "sakura - Clifton",
+        "cuisine": "Japanese / Sushi / Teppanyaki",
+        "area": "Clifton",
+        "page_url": "https://yaafta.com/files/clifton/Sakura",
+        "image_url": null
+    },
+    {
+        "slug": "Clifton-Terraza",
+        "name": "terraza - Clifton",
+        "cuisine": "Continental & Mediterranean",
+        "area": "Clifton",
+        "page_url": "https://yaafta.com/files/clifton/terraza",
+        "image_url": null
+    },
+    {
+        "slug": "dhaphase8-altituderooftop",
+        "name": "The Altitude Rooftop Lounge",
+        "cuisine": "Rooftop Cafe / Burgers, Steaks & Continental",
+        "area": "DHA Phase 8",
+        "page_url": "https://yaafta.com/files/dha/Altitude",
+        "image_url": null
+    },
+    {
+        "slug": "Dha-altituderooftop",
+        "name": "The Altitude Rooftop Lounge - Dha",
+        "cuisine": "Rooftop Cafe / Burgers, Steaks & Continental",
+        "area": "Dha",
+        "page_url": "https://yaafta.com/files/dha/Altitude",
+        "image_url": null
+    },
+    {
+        "slug": "Clifton-xanders",
+        "name": "xanders - Clifton",
+        "cuisine": "Café / Continental / All-Day Dining",
+        "area": "Clifton",
+        "page_url": "https://yaafta.com/files/clifton/xanders",
+        "image_url": null
+    },
+    {
+        "slug": "Dha-xanders",
+        "name": "Xanders - Dha",
+        "cuisine": "Modern Café / Casual Dining",
+        "area": "Dha",
+        "page_url": "https://yaafta.com/files/dha/xanders",
+        "image_url": null
+    },
+    {
+        "slug": "korangi-zeenat",
+        "name": "Zeenat Restaurant - Korangi",
+        "cuisine": "Pakistani / Desi food",
+        "area": "Korangi",
+        "page_url": "https://yaafta.com/files/korangi/Zeenat",
+        "image_url": null
+    }
+]
