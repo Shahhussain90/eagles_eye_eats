@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
+ include __DIR__ . '/connection.php';
 if (current_user()) {
     header('Location: ' . BASE_URL . 'files/profile');
     exit;
@@ -21,7 +21,7 @@ if (current_user()) {
     <link rel="canonical" href="https://yaafta.com/files/signin">
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/files/layout/header.php'; ?>
+<?php  include __DIR__ . '/layout/header.php'; ?>
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 
@@ -76,7 +76,7 @@ function handleGoogleCredential(response) {
 }
 </script>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/files/layout/footer.php'; ?>
+<?php  include __DIR__ . '/layout/footer.php'; ?>
 
 <script src="../index.js"></script>
 </body>

@@ -232,25 +232,19 @@ if (!empty($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], parse_u
             </ul>
           <?php endif; ?>
 
-          <?php if ($restaurant['signature_dishes']): ?>
-            <h3>Signature Dishes and Menu Highlights</h3>
-            <?php foreach (array_filter(explode("\n\n", $restaurant['signature_dishes'])) as $para): ?>
-              <p><?php echo nl2br(htmlspecialchars(trim($para))); ?></p>
-            <?php endforeach; ?>
-          <?php endif; ?>
-
-          <?php if ($restaurant['pricing_value']): ?>
-            <h3>Pricing and Value</h3>
-            <?php foreach (array_filter(explode("\n\n", $restaurant['pricing_value'])) as $para): ?>
-              <p><?php echo nl2br(htmlspecialchars(trim($para))); ?></p>
-            <?php endforeach; ?>
-          <?php endif; ?>
-
-          <?php if ($restaurant['ambience_experience']): ?>
-            <h3>Ambience and Experience</h3>
-            <?php foreach (array_filter(explode("\n\n", $restaurant['ambience_experience'])) as $para): ?>
-              <p><?php echo nl2br(htmlspecialchars(trim($para))); ?></p>
-            <?php endforeach; ?>
+          <?php if ($restaurant['menu_content']): ?>
+            <h3>Menu Highlights</h3>
+            <?php foreach (explode("\n", $restaurant['menu_content']) as $line):
+              $line = trim($line);
+              if ($line === '') continue;
+              if (strpos($line, '## ') === 0): ?>
+                <h4><?php echo htmlspecialchars(substr($line, 3)); ?></h4>
+              <?php elseif (strpos($line, '- ') === 0): ?>
+                <p style="margin-left:12px;">• <?php echo htmlspecialchars(substr($line, 2)); ?></p>
+              <?php else: ?>
+                <p><?php echo htmlspecialchars($line); ?></p>
+              <?php endif;
+            endforeach; ?>
           <?php endif; ?>
 
           <?php if ($restaurant['best_time_to_visit']): ?>

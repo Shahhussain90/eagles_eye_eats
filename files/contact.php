@@ -1,6 +1,6 @@
 
 <?php 
-   require_once 'connection.php';
+   require_once __DIR__ . '/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (isset($_POST['contact_btn'])) {
@@ -69,8 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
-    include $_SERVER['DOCUMENT_ROOT'] . '/files/layout/header.php';
+     include __DIR__ . '/layout/header.php';
   ?>
 
     <section class="contact-page">
@@ -138,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </section>
   
 <?php
-    include_once 'layout/footer.php';
+    include_once __DIR__ . '/layout/footer.php';
     ?>
     <script src="../index.js"></script>
   </body>

@@ -1,40 +1,28 @@
 <?php
-require_once 'connection.php';
+// Replaces the old static files/data/restaurants.json — this generates the
+// same shape live from the database, so search always reflects current data
+// with no manual regeneration step needed.
+include_once __DIR__ . '/../connection.php';
 
-global $con;
+header('Content-Type: application/json');
 
-if (!$con) {
-    die("❌ Database connection failed: " . mysqli_connect_error());
-}
-
-$result = mysqli_query($con, "
-    SELECT slug, name, cuisine, area, page_url, image_url 
-    FROM restaurants 
-    ORDER BY name ASC
+$result = $con->query("
+    SELECT r.name, r.cuisine, r.slug, a.name AS area, a.slug AS area_slug
+    FROM restaurants r
+    LEFT JOIN areas a ON a.id = r.area_id
 ");
 
-if (!$result) {
-    die("❌ Query failed: " . mysqli_error($con));
+$out = [];
+while ($row = $result->fetch_assoc()) {
+    $pageUrl = $row['area_slug']
+        ? BASE_URL . 'karachi/' . $row['area_slug'] . '/' . $row['slug']
+        : '#';
+    $out[] = [
+        'name'     => $row['name'],
+        'cuisine'  => $row['cuisine'],
+        'area'     => $row['area'],
+        'page_url' => $pageUrl,
+    ];
 }
 
-$rows = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $rows[] = $row;
-}
-
-$dataDir = __DIR__ . '/data';
-if (!is_dir($dataDir)) {
-    mkdir($dataDir, 0755, true);
-}
-
-$outFile = $dataDir . '/restaurants.json';
-$written = file_put_contents(
-    $outFile,
-    json_encode($rows, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
-);
-
-if ($written === false) {
-    die("❌ Failed to write JSON file. Check that files/data/ is writable.");
-}
-
-echo "✅ Exported " . count($rows) . " restaurants at " . date('Y-m-d H:i:s');
+echo json_encode($out);

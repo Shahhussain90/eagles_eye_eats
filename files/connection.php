@@ -18,7 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 define('GOOGLE_CLIENT_ID', '64634114234-u6lhebqidqi3aij19q38vgthb7t1v3c3.apps.googleusercontent.com');
-define('UPLOAD_DIR', $_SERVER['DOCUMENT_ROOT'] . '/files/uploads/');
+define('UPLOAD_DIR', __DIR__ . '/uploads/');
 define('UPLOAD_URL', BASE_URL . 'files/uploads/');
 
 function current_user() {

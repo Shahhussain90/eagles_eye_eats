@@ -1,5 +1,5 @@
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
+     require_once __DIR__ . '/connection.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,8 +38,8 @@
 
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
-    include $_SERVER['DOCUMENT_ROOT'] . '/files/layout/header.php';
+  
+     include __DIR__ . '/layout/header.php';
   ?>
 
     <h1 style="padding-left:50px">Privacy Policy</h1>

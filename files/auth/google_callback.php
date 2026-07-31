@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
+require_once __DIR__ . '../connection.php';
 header('Content-Type: application/json');
 
 $input = json_decode(file_get_contents('php://input'), true);

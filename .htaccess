@@ -1,4 +1,17 @@
 RewriteEngine On
+
+# Inside /files/ or /admin/: allow clean URLs without .php,
+# if a matching .php file actually exists on disk
+RewriteCond %{REQUEST_URI} ^/yaafta/(files|admin)/
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Inside /files/ or /admin/ otherwise: leave everything else alone
+# (real files, layout includes, images, etc.) — don't send to the router
+RewriteCond %{REQUEST_URI} ^/yaafta/(files|admin)/
+RewriteRule ^ - [L]
+
+# Everything else on the site: dynamic router (/karachi/..., /category/..., /blog/...)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ router.php?path=$1 [QSA,L]

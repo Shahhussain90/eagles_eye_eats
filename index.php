@@ -1,14 +1,15 @@
-     <?php
-     require_once __DIR__ . '/files/connection.php';
+<?php
+      require_once __DIR__ . '/files/connection.php';
       
        $ysrRestaurant = null;
    $ysrResult = $con->query("
-       SELECT r.id, r.name, r.page_url, r.cuisine, r.area, r.image_url,
+       SELECT r.id, r.name, r.slug, a.slug AS area_slug, r.cuisine, a.name AS area, r.image_url,
               COALESCE((SELECT AVG(value_for_money) FROM yaafta_special_ratings WHERE restaurant_id = r.id), 0) AS avg_value,
               COALESCE((SELECT AVG(influencer_accuracy) FROM yaafta_special_ratings WHERE restaurant_id = r.id), 0) AS avg_influencer,
               COALESCE((SELECT AVG(recommend_pct) FROM yaafta_special_ratings WHERE restaurant_id = r.id), 0) AS avg_recommend,
               (SELECT COUNT(*) FROM yaafta_special_ratings WHERE restaurant_id = r.id) AS vote_count
        FROM restaurants r
+       LEFT JOIN areas a ON a.id = r.area_id
        ORDER BY RAND()
        LIMIT 1
    ");
@@ -162,7 +163,7 @@
     
     // error_reporting(E_ALL);
     // ini_set('display_errors', 1);
-        require_once __DIR__ . '/files/layout/header.php';
+       include __DIR__ . '/files/layout/header.php';
       ?>
     
     
@@ -253,7 +254,13 @@
 
               <div class="ysr-results" id="ysrResults" style="display:none;"></div>
 
-              <a href="<?php echo htmlspecialchars($ysrRestaurant['page_url'] ?: '#'); ?>" class="ysr-view-link">View full page →</a>
+              <?php
+                $ysrLink = '#';
+                if (!empty($ysrRestaurant['area_slug']) && !empty($ysrRestaurant['slug'])) {
+                    $ysrLink = BASE_URL . 'karachi/' . $ysrRestaurant['area_slug'] . '/' . $ysrRestaurant['slug'];
+                }
+              ?>
+              <a href="<?php echo htmlspecialchars($ysrLink); ?>" class="ysr-view-link">View full page →</a>
             </div>
             <?php else: ?>
             <div class="hero-card" aria-label="discover best restaurants in Karachi, foods, and dining experiences">
@@ -283,7 +290,7 @@
 
     <div class="area-cards-grid">
 
-      <a class="area-card" style="--area-color: var(--accent);" href="<?php echo BASE_URL; ?>files/dha/RestaurantsinDha">
+      <a class="area-card" style="--area-color: var(--accent);" href="<?php echo BASE_URL; ?>karachi/dha">
         <span class="area-card-icon">🏙️</span>
         <h3 class="area-card-name">DHA</h3>
         <p class="area-card-desc">The upscale residential and commercial hub of Karachi, offering the city's most refined dining spots.</p>
@@ -294,7 +301,7 @@
         <span class="area-card-link">Explore Area <span aria-hidden="true">→</span></span>
       </a>
 
-      <a class="area-card" style="--area-color: var(--secondary);" href="<?php echo BASE_URL; ?>files/clifton/RestaurantsinClifton">
+      <a class="area-card" style="--area-color: var(--secondary);" href="<?php echo BASE_URL; ?>karachi/clifton">
         <span class="area-card-icon">🌊</span>
         <h3 class="area-card-name">Clifton</h3>
         <p class="area-card-desc">A coastal neighborhood famous for Do Darya's seaside restaurants and high-end dining.</p>
@@ -305,7 +312,7 @@
         <span class="area-card-link">Explore Area <span aria-hidden="true">→</span></span>
       </a>
 
-      <a class="area-card" style="--area-color: var(--accent);" href="<?php echo BASE_URL; ?>files/northnazimabad/RestaurantsinNorthNazimabad">
+      <a class="area-card" style="--area-color: var(--accent);" href="<?php echo BASE_URL; ?>karachi/north-nazimabad">
         <span class="area-card-icon">🍲</span>
         <h3 class="area-card-name">North Nazimabad</h3>
         <p class="area-card-desc">A densely populated area offering incredible value on traditional Karahi and local classics.</p>
@@ -316,7 +323,7 @@
         <span class="area-card-link">Explore Area <span aria-hidden="true">→</span></span>
       </a>
 
-      <a class="area-card" style="--area-color: var(--secondary);" href="<?php echo BASE_URL; ?>files/bahadurabad/RestaurantsinBahadurabad">
+      <a class="area-card" style="--area-color: var(--secondary);" href="<?php echo BASE_URL; ?>karachi/bahadurabad">
         <span class="area-card-icon">🛣️</span>
         <h3 class="area-card-name">Bahadurabad</h3>
         <p class="area-card-desc">The historic downtown of Karachi, home to the city's oldest and most legendary food streets.</p>
@@ -327,7 +334,7 @@
         <span class="area-card-link">Explore Area <span aria-hidden="true">→</span></span>
       </a>
 
-      <a class="area-card" style="--area-color: var(--accent);" href="<?php echo BASE_URL; ?>files/korangi/RestaurantsinKorangi">
+      <a class="area-card" style="--area-color: var(--accent);" href="<?php echo BASE_URL; ?>karachi/korangi">
         <span class="area-card-icon">🔥</span>
         <h3 class="area-card-name">Korangi</h3>
         <p class="area-card-desc">A vast area known for authentic, spicy local food and massive BBQ joints.</p>
@@ -470,19 +477,19 @@
     </div>
 
     <div class="bento-categories">
-      <a class="bento-card bento-large" href="<?php echo BASE_URL; ?>files/categories/fine-dining-restaurants" style="--card-color:#ffb703;">
+      <a class="bento-card bento-large" href="<?php echo BASE_URL; ?>category/fine-dining" style="--card-color:#ffb703;">
         <div class="bento-icon">🍽️</div>
         <h3>Fine Dining</h3>
         <p>Elegant spots for special occasions</p>
       </a>
 
-      <a class="bento-card bento-tall" href="<?php echo BASE_URL; ?>files/categories/cafes-karachi" style="--card-color:#8ecae6;">
+      <a class="bento-card bento-tall" href="<?php echo BASE_URL; ?>category/cafes" style="--card-color:#8ecae6;">
         <div class="bento-icon">☕</div>
         <h3>Cafes</h3>
         <p>Coffee, pastries & cozy corners</p>
       </a>
 
-      <a class="bento-card bento-small" href="<?php echo BASE_URL; ?>files/categories/Best-Restaurants-with-a-View" style="--card-color:#fb8500;">
+      <a class="bento-card bento-small" href="<?php echo BASE_URL; ?>category/restaurants-with-a-view" style="--card-color:#fb8500;">
         <div class="bento-icon">🍔</div>
         <h3>Best Restaurants with a View</h3>
       </a>
@@ -514,7 +521,7 @@
           for Karachi diners.
         </p>
       </div>
-      <a class="btn btn-outline" href="<?php echo BASE_URL; ?>files/blog/blogs">Visit Blogs</a>
+      <a class="btn btn-outline" href="<?php echo BASE_URL; ?>blog">Visit Blogs</a>
     </div>
 
     <div class="blog-scroll-wrap">
@@ -526,7 +533,7 @@
           <div class="content">
             <h3>Top Street Food in Karachi</h3>
             <p>Explore the wide variety of food of karachi from fast food to chinese cuisine</p>
-            <a class="read-more" href="<?php echo BASE_URL; ?>files/blog/Top-Street-Food-in-Karachi">Read More →</a>
+            <a class="read-more" href="<?php echo BASE_URL; ?>blog/top-street-food-in-karachi">Read More →</a>
           </div>
         </article>
         
@@ -537,7 +544,7 @@
           <div class="content">
             <h3>Best <em>Pizza Chains</em> &amp; Street Food<br>in Karachi</h3>
             <p>Every major pizza chain compared on taste, value, and delivery — plus the 10 street foods that define this city.</p>
-            <a class="read-more" href="<?php echo BASE_URL; ?>files/blog/best-pizza-chains-karachi-compared">Read More →</a>
+            <a class="read-more" href="<?php echo BASE_URL; ?>blog/best-pizza-chains-karachi-compared">Read More →</a>
           </div>
         </article>
         
@@ -548,7 +555,7 @@
           <div class="content">
            <h3>Coffee Guide: Espresso, Latte, Cappuccino, Flat White &amp; Mocha Explained</h3>
              <p>Learn the differences between espresso, latte, cappuccino, flat white, and mocha. Discover ingredients, milk ratios, flavor profiles, and find the perfect coffee for your taste.</p>
-            <a class="read-more" href="<?php echo BASE_URL; ?>files/blog/coffee-guide-espresso-latte-cappuccino">Read More →</a>
+            <a class="read-more" href="<?php echo BASE_URL; ?>blog/coffee-guide-espresso-latte-cappuccino">Read More →</a>
           </div>
         </article>
 
@@ -947,7 +954,7 @@
            Footer
       ========================== -->
       <?php
-      require_once __DIR__ .'/files/layout/footer.php';
+      include __DIR__ . '/files/layout/footer.php';
       ?>
     
       <script src="index.js"></script>

@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
+ require_once __DIR__ . '/connection.php';
 $user = current_user();
 if (!$user) {
     header('Location: ' . BASE_URL . 'files/signin');
@@ -92,7 +92,7 @@ unset($rev);
     Back
   </a>
 </div>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/files/layout/header.php'; ?>
+<?php  include __DIR__ . '/layout/header.php'; ?>
 
 <section class="section auth-page">
   <div class="container" style="max-width:720px;">
@@ -164,7 +164,7 @@ unset($rev);
   </div>
 </section>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/files/layout/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/layout/footer.php'; ?>
 
 <script>
 document.querySelectorAll('.review-delete-btn').forEach(btn => {

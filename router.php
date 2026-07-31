@@ -19,6 +19,9 @@ if ($count === 2 && $segments[0] === 'category') {
     $_GET['blog_slug'] = $segments[1];
     include __DIR__ . '/templates/blog.php';
 
+} elseif ($count === 1 && $segments[0] === 'blog') {
+    include __DIR__ . '/templates/blog_index.php';
+
 } elseif ($count === 3) {
     $_GET['city_slug'] = $segments[0];
     $_GET['area_slug'] = $segments[1];
@@ -36,4 +39,5 @@ if ($count === 2 && $segments[0] === 'category') {
 
 } else {
     include __DIR__ . '/index.php';
+    include __DIR__ . '/i.php';
 }

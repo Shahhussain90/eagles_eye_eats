@@ -1,5 +1,5 @@
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
+    require_once __DIR__ . '/connection.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,7 +34,7 @@
 <body>
 
   <?php
-    include $_SERVER['DOCUMENT_ROOT'] . '/files/layout/header.php';
+     include __DIR__ . '/layout/header.php';
   ?>
 
   <!-- =====================
@@ -311,7 +311,7 @@
     </div>
   </section>
 
-  <?php include_once 'layout/footer.php'; ?>
+  <?php include_once __DIR__ . '/layout/footer.php'; ?>
   <script src="../index.js"></script>
 
 </body>
