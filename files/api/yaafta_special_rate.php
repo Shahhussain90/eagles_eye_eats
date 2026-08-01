@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/files/connection.php';
+include_once __DIR__ . '/../connection.php';
 header('Content-Type: application/json');
 
 if (!rate_limit_check('ysr_rate', 5, 60)) {

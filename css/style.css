@@ -614,9 +614,9 @@ header::after {
 
 .search-results {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 30px);
   right: 0;
-  width: 320px;
+  width: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -2106,10 +2106,7 @@ footer {
   .nl-home-box { padding: 36px 20px; }
 }
 
-/* Blog scroll wrapper — desktop unchanged, mobile scrolls horizontally */
-.blog-scroll-wrap {
-  /* no clipping on desktop so shadow/hover effects aren't cut */
-}
+
 
 @media (max-width: 1100px) {
   .blog-scroll-wrap {

@@ -1,46 +1,8 @@
 <?php
-// Requires $restaurantSlug and $restaurantName to be set BEFORE this include.
-if (empty($restaurantSlug)) { echo '<!-- review-widget: missing $restaurantSlug -->'; return; }
+// Requires $restaurantId to be set BEFORE this include (restaurant.php already
+// has it after looking up the restaurant by slug/area/city).
+if (empty($restaurantId)) { echo '<!-- review-widget: missing $restaurantId -->'; return; }
 
-$rStmt = $con->prepare("SELECT id, page_url, area, cuisine FROM restaurants WHERE slug = ?");
-$rStmt->bind_param("s", $restaurantSlug);
-$rStmt->execute();
-$rRow = $rStmt->get_result()->fetch_assoc();
-
-$currentPageUrl = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
-// $restaurantArea / $restaurantCuisine are optional — set them before this
-// include on each restaurant page, same pattern as $restaurantSlug/$restaurantName.
-// If not set on a given page, existing DB values are left untouched (not overwritten with blank).
-$hasArea = isset($restaurantArea) && $restaurantArea !== '';
-$hasCuisine = isset($restaurantCuisine) && $restaurantCuisine !== '';
-
-if (!$rRow) {
-    $insArea = $hasArea ? $restaurantArea : null;
-    $insCuisine = $hasCuisine ? $restaurantCuisine : null;
-    $ins = $con->prepare("INSERT INTO restaurants (slug, name, page_url, area, cuisine) VALUES (?, ?, ?, ?, ?)");
-    $ins->bind_param("sssss", $restaurantSlug, $restaurantName, $currentPageUrl, $insArea, $insCuisine);
-    $ins->execute();
-    $restaurantId = $con->insert_id;
-} else {
-    $restaurantId = $rRow['id'];
-
-    // Compare against the existing row (already fetched into $rRow) and only
-    // write if something has actually changed — avoids a write query on
-    // every single page view when nothing's different.
-    $needsUpdate =
-        $currentPageUrl !== $rRow['page_url']
-        || ($hasArea && $restaurantArea !== $rRow['area'])
-        || ($hasCuisine && $restaurantCuisine !== $rRow['cuisine']);
-
-    if ($needsUpdate) {
-        $updateArea = $hasArea ? $restaurantArea : $rRow['area'];
-        $updateCuisine = $hasCuisine ? $restaurantCuisine : $rRow['cuisine'];
-        $upd = $con->prepare("UPDATE restaurants SET page_url = ?, area = ?, cuisine = ? WHERE id = ?");
-        $upd->bind_param("sssi", $currentPageUrl, $updateArea, $updateCuisine, $restaurantId);
-        $upd->execute();
-    }
-}
 $agg = $con->prepare("SELECT COUNT(*) AS n, AVG(rating) AS avg_rating, AVG(recommend_pct) AS avg_recommend FROM reviews WHERE restaurant_id = ?");
 $agg->bind_param("i", $restaurantId);
 $agg->execute();
@@ -76,7 +38,6 @@ foreach ($reviews as &$rv) {
 }
 unset($rv);
 
-$me = current_user();
 $me = current_user();
 $myExistingReview = null;
 $accountTooNew = false;
@@ -214,7 +175,6 @@ $avgRecommend = $stats['n'] > 0 ? round($stats['avg_recommend']) : 0;
     </div>
   <?php endif; ?>
 </div>
-</div>
 
 <script>
 (function () {
@@ -232,7 +192,7 @@ $avgRecommend = $stats['n'] > 0 ? round($stats['avg_recommend']) : 0;
 
     const fileInput = form.querySelector('input[type="file"]');
     if (fileInput.files.length > 0) {
-        const maxBytes = 8 * 1024 * 1024; // 8MB per file, matches PHP-side cap below
+        const maxBytes = 8 * 1024 * 1024;
         for (const f of fileInput.files) {
             if (f.size > maxBytes) {
                 errEl.textContent = `"${f.name}" is too large. Max size is 8MB per photo.`;

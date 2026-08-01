@@ -1,9 +1,16 @@
-const BASE_URL = "https://yaafta.com/";
+// BASE_URL is derived automatically from this script's own <script src="...">
+// tag — works identically whether the site is at a domain root (production)
+// or a subfolder (e.g. local XAMPP), with zero PHP changes needed on any page.
+const BASE_URL = (function () {
+  const scripts = document.getElementsByTagName('script');
+  const thisScript = scripts[scripts.length - 1];
+  return thisScript.src.replace(/index\.js(\?.*)?$/, '');
+})();
 
 window.restaurants = [];
 let restaurantsReady = false;
 
-fetch(`${BASE_URL}files/data/restaurants.json`)
+fetch(`${BASE_URL}files/api/restaurants_data.php`)
   .then(r => {
     if (!r.ok) throw new Error('Failed to fetch restaurants.json');
     return r.json();
@@ -326,7 +333,7 @@ clearBtn?.addEventListener('click', () => {
       return;
     }
     const fd = new FormData(form);
-    fetch('<?php echo BASE_URL; ?>files/api/submit_review.php', { method: 'POST', body: fd })
+    fetch(BASE_URL + 'files/api/submit_review.php', { method: 'POST', body: fd })
       .then(r => r.json())
       .then(data => {
         if (data.success) {
@@ -386,7 +393,7 @@ clearBtn?.addEventListener('click', () => {
     fd.append('restaurant_id', restaurantId);
     sliders.forEach(s => fd.append(s.dataset.metric, s.value));
 
-    fetch('https://yaafta.com/files/api/yaafta_special_rate.php', { method: 'POST', body: fd })
+    fetch(BASE_URL + 'files/api/yaafta_special_rate.php', { method: 'POST', body: fd })
       .then(r => r.json())
       .then(data => {
         if (data.success) {
