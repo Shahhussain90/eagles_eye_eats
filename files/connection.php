@@ -40,19 +40,26 @@ function resize_and_save_image($tmpPath, $destPath, $maxWidth = 1200, $maxHeight
 
     [$width, $height, $type] = $info;
 
-    switch ($type) {
-        case IMAGETYPE_JPEG:
-            $src = imagecreatefromjpeg($tmpPath);
-            break;
-        case IMAGETYPE_PNG:
-            $src = imagecreatefrompng($tmpPath);
-            break;
-        case IMAGETYPE_WEBP:
-            $src = imagecreatefromwebp($tmpPath);
-            break;
-        default:
-            return false;
+    // Fallback: if this server's GD build is missing the decode function for
+    // this image type (seen here for both WebP and PNG — this GD install
+    // appears to only be partially functional), just copy the file through
+    // unresized rather than rejecting the upload outright. Production
+    // hosting (Hostinger) should have full GD support, so this only
+    // matters for local testing.
+    $decodeFn = [
+        IMAGETYPE_JPEG => 'imagecreatefromjpeg',
+        IMAGETYPE_PNG  => 'imagecreatefrompng',
+        IMAGETYPE_WEBP => 'imagecreatefromwebp',
+    ][$type] ?? null;
+
+    if ($decodeFn === null) {
+        return false; // genuinely unsupported type (not jpg/png/webp at all)
     }
+    if (!function_exists($decodeFn)) {
+        return copy($tmpPath, $destPath);
+    }
+
+    $src = $decodeFn($tmpPath);
     if (!$src) return false;
 
     $ratio = min($maxWidth / $width, $maxHeight / $height, 1);
@@ -69,10 +76,13 @@ function resize_and_save_image($tmpPath, $destPath, $maxWidth = 1200, $maxHeight
     imagecopyresampled($dst, $src, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
 
     $saved = false;
-    if ($type === IMAGETYPE_PNG) {
+    if ($type === IMAGETYPE_PNG && function_exists('imagepng')) {
         $saved = imagepng($dst, $destPath, 6);
-    } else {
+    } elseif (function_exists('imagejpeg')) {
         $saved = imagejpeg($dst, $destPath, $quality);
+    } else {
+        // even the encode function is missing — fall back to raw copy
+        $saved = copy($tmpPath, $destPath);
     }
 
     imagedestroy($src);

@@ -15,11 +15,11 @@ include __DIR__ . '/layout/admin_header.php';
   <span>Welcome, <?php echo htmlspecialchars($_SESSION['admin_username'] ?? 'admin'); ?></span>
 </div>
 
-<div class="admin-card" style="display:flex; gap:24px; flex-wrap:wrap;">
-  <div><strong style="font-size:1.6rem;"><?php echo $restaurantCount; ?></strong><div>Restaurants</div></div>
-  <div><strong style="font-size:1.6rem;"><?php echo $areaCount; ?></strong><div>Areas</div></div>
-  <div><strong style="font-size:1.6rem;"><?php echo $categoryCount; ?></strong><div>Categories</div></div>
-  <div><strong style="font-size:1.6rem;"><?php echo $blogCount; ?></strong><div>Blog Posts</div></div>
+<div class="admin-card" style="display:flex; gap:24px; flex-wrap:wrap; color:black;">
+  <div><strong style="font-size:1.6rem; "><?php echo $restaurantCount; ?></strong><div>Restaurants</div></div>
+  <div><strong style="font-size:1.6rem; "><?php echo $areaCount; ?></strong><div>Areas</div></div>
+  <div><strong style="font-size:1.6rem; "><?php echo $categoryCount; ?></strong><div>Categories</div></div>
+  <div><strong style="font-size:1.6rem; "><?php echo $blogCount; ?></strong><div>Blog Posts</div></div>
 </div>
 
 <div class="admin-card">

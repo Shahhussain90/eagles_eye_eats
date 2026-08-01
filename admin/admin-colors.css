@@ -1,0 +1,72 @@
+/* Admin panel text color fixes only — no backgrounds, layout, or spacing
+   touched here. The public site's style.css sets body{color:var(--text)}
+   (near-white, for the dark public theme), which the admin panel was
+   inheriting even though it sits on light/white cards — causing white
+   text on white backgrounds. This file only overrides color. */
+
+body { color: #1a1a1a; }
+
+h1, h2, h3, h4, h5, h6,
+p, span, td, th, li, label, div {
+  color: inherit;
+}
+
+.admin-sidebar,
+.admin-sidebar a,
+.admin-sidebar .brand {
+  color: #eee;
+}
+.admin-sidebar a:hover,
+.admin-sidebar a.active {
+  color: #fff;
+}
+
+.admin-main,
+.admin-topbar,
+.admin-card,
+.admin-card h1,
+.admin-card h2,
+.admin-card h3 {
+  color: #1a1a1a;
+}
+
+table.admin-table,
+table.admin-table td {
+  color: #1a1a1a;
+}
+table.admin-table th {
+  color: #888;
+}
+table.admin-table a {
+  color: #0d6efd;
+}
+
+.admin-form label,
+.admin-form fieldset,
+.admin-form legend,
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+  color: #1a1a1a;
+}
+.admin-form .hint {
+  color: #888;
+}
+
+.admin-checkbox-grid label {
+  color: #1a1a1a;
+}
+
+.admin-remove-btn { color: #d32f2f; }
+.admin-add-btn { color: #007a4d; }
+.admin-flash { color: #0a6e3a; }
+
+.admin-auth-wrap,
+.admin-auth-wrap h1,
+.admin-auth-wrap input {
+  color: #1a1a1a;
+}
+.admin-auth-error { color: #d32f2f; }
+
+.admin-main .btn-primary { color: #fff; }
+.admin-main .btn-outline { color: #1a1a1a; }

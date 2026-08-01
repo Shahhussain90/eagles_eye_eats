@@ -2,7 +2,10 @@
 // Expects: $con, $restaurantId (int or null for new), $_POST, $_FILES
 // Returns the restaurant id (new or existing) on success.
 
+$uploadWarnings = [];
+
 function admin_upload_image($fileKey, $index = null) {
+    global $uploadWarnings;
     $file = $index === null ? ($_FILES[$fileKey] ?? null) : [
         'name' => $_FILES[$fileKey]['name'][$index] ?? '',
         'type' => $_FILES[$fileKey]['type'][$index] ?? '',
@@ -10,11 +13,16 @@ function admin_upload_image($fileKey, $index = null) {
         'error' => $_FILES[$fileKey]['error'][$index] ?? UPLOAD_ERR_NO_FILE,
         'size' => $_FILES[$fileKey]['size'][$index] ?? 0,
     ];
-    if (!$file || $file['error'] !== UPLOAD_ERR_OK || empty($file['tmp_name'])) {
+    if (!$file || empty($file['tmp_name'])) {
+        return null; // no file actually chosen — not an error
+    }
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        $uploadWarnings[] = "Upload failed for \"{$file['name']}\" (PHP upload error code {$file['error']}).";
         return null;
     }
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
     if (!in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
+        $uploadWarnings[] = "\"{$file['name']}\" was skipped — only JPG, PNG, and WEBP are supported.";
         return null;
     }
     $destDir = UPLOAD_DIR . 'restaurants/';
@@ -27,6 +35,7 @@ function admin_upload_image($fileKey, $index = null) {
     if (resize_and_save_image($file['tmp_name'], $destPath)) {
         return UPLOAD_URL . 'restaurants/' . $filename;
     }
+    $uploadWarnings[] = "\"{$file['name']}\" could not be saved — check that files/uploads/restaurants/ is writable.";
     return null;
 }
 
@@ -100,7 +109,7 @@ if ($name === '' || $slug === '' || !$areaId) {
                 WHERE id=?
             ");
             $stmt->bind_param(
-                "ssissssssssssssssssssssdsi",
+                "ssisssssssssssssssssssssdsi",
                 $name, $slug, $areaId, $cuisine, $description,
                 $metaDescription, $metaKeywords,
                 $aboutContent, $highlights, $whatPeopleSay, $menuContent,
@@ -124,7 +133,7 @@ if ($name === '' || $slug === '' || !$areaId) {
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         ");
         $stmt->bind_param(
-            "ssisssssssssssssssssssssdsss",
+            "ssissssssssssssssssssssssds",
             $name, $slug, $areaId, $cuisine, $description, $metaDescription, $metaKeywords, $heroUrl,
             $aboutContent, $highlights, $whatPeopleSay, $menuContent,
             $bestTimeToVisit, $finalThoughts, $lastUpdated,

@@ -13,7 +13,12 @@ $formError = null;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include __DIR__ . '/save_handler.php';
     if (!$formError) {
-        header('Location: list.php?saved=1');
+        if (!empty($uploadWarnings)) {
+            $_SESSION['admin_upload_warnings'] = $uploadWarnings;
+            header('Location: edit.php?id=' . $restaurantId);
+        } else {
+            header('Location: list.php?saved=1');
+        }
         exit;
     }
     $r = $_POST;
@@ -47,6 +52,15 @@ include __DIR__ . '/../layout/admin_header.php';
 
 <?php if ($formError): ?>
   <div class="admin-flash" style="background:#fdecea;color:#d32f2f;"><?php echo htmlspecialchars($formError); ?></div>
+<?php endif; ?>
+<?php if (!empty($_SESSION['admin_upload_warnings'])): ?>
+  <div class="admin-flash" style="background:#fff8e1;color:#8a6300;">
+    <?php foreach ($_SESSION['admin_upload_warnings'] as $w): ?>
+      <div><?php echo htmlspecialchars($w); ?></div>
+    <?php endforeach; ?>
+    <div style="margin-top:6px;">Everything else was saved successfully.</div>
+  </div>
+  <?php unset($_SESSION['admin_upload_warnings']); ?>
 <?php endif; ?>
 
 <form method="POST" enctype="multipart/form-data" class="admin-form">

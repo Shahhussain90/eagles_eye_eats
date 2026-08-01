@@ -8,7 +8,12 @@ $restaurantId = null;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include __DIR__ . '/save_handler.php';
     if (!$formError) {
-        header('Location: list.php?saved=1');
+        if (!empty($uploadWarnings)) {
+            $_SESSION['admin_upload_warnings'] = $uploadWarnings;
+            header('Location: edit.php?id=' . $restaurantId);
+        } else {
+            header('Location: list.php?saved=1');
+        }
         exit;
     }
 }
