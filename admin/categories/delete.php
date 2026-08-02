@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !csrf_verify()) {
 $id = (int)($_POST['id'] ?? 0);
 if ($id) {
     // restaurant_categories rows cascade-delete automatically via FK
+    // category_faqs rows also cascade-delete automatically via FK
     $stmt = $con->prepare("DELETE FROM categories WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();

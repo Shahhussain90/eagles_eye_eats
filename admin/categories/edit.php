@@ -12,13 +12,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name'] ?? '');
     $slug = trim($_POST['slug'] ?? '');
     $intro = trim($_POST['intro_content'] ?? '');
+    $metaDesc = trim($_POST['meta_description'] ?? '');
+    $metaKw = trim($_POST['meta_keywords'] ?? '');
     if ($name === '' || $slug === '') {
         $formError = 'Name and slug are required.';
         $c = $_POST;
     } else {
-        $stmt = $con->prepare("UPDATE categories SET slug=?, name=?, intro_content=? WHERE id=?");
-        $stmt->bind_param("sssi", $slug, $name, $intro, $catId);
+        $stmt = $con->prepare("UPDATE categories SET slug=?, name=?, intro_content=?, meta_description=?, meta_keywords=? WHERE id=?");
+        $stmt->bind_param("sssssi", $slug, $name, $intro, $metaDesc, $metaKw, $catId);
         $stmt->execute();
+
+        $con->query("DELETE FROM category_faqs WHERE category_id = $catId");
+        if (!empty($_POST['faq_question'])) {
+            $faqStmt = $con->prepare("INSERT INTO category_faqs (category_id, question, answer, sort_order) VALUES (?, ?, ?, ?)");
+            foreach ($_POST['faq_question'] as $i => $q) {
+                $q = trim($q);
+                $ans = trim($_POST['faq_answer'][$i] ?? '');
+                if ($q === '' || $ans === '') continue;
+                $faqStmt->bind_param("issi", $catId, $q, $ans, $i);
+                $faqStmt->execute();
+            }
+        }
         header('Location: list.php?saved=1');
         exit;
     }
@@ -29,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $c = $stmt->get_result()->fetch_assoc();
     if (!$c) { header('Location: list.php'); exit; }
 }
+
+$faqs = $con->query("SELECT question, answer FROM category_faqs WHERE category_id = $catId ORDER BY sort_order ASC")->fetch_all(MYSQLI_ASSOC);
 
 $adminPageTitle = 'Edit ' . ($c['name'] ?? '');
 include __DIR__ . '/../layout/admin_header.php';
@@ -48,12 +64,47 @@ include __DIR__ . '/../layout/admin_header.php';
     <label>URL Slug *</label>
     <input type="text" name="slug" required value="<?php echo htmlspecialchars($c['slug'] ?? ''); ?>">
 
-    <label>Description</label>
+    <label>Description (shown on the category page)</label>
     <textarea name="intro_content"><?php echo htmlspecialchars($c['intro_content'] ?? ''); ?></textarea>
+
+    <label>Meta Description</label>
+    <textarea name="meta_description"><?php echo htmlspecialchars($c['meta_description'] ?? ''); ?></textarea>
+
+    <label>Meta Keywords</label>
+    <input type="text" name="meta_keywords" value="<?php echo htmlspecialchars($c['meta_keywords'] ?? ''); ?>" placeholder="comma, separated, keywords">
   </div>
+
+  <div class="admin-card">
+    <h2>FAQs</h2>
+    <div id="faq-rows">
+      <?php foreach ($faqs as $f): ?>
+        <div class="admin-repeat-row faq-row">
+          <input type="text" name="faq_question[]" placeholder="Question" value="<?php echo htmlspecialchars($f['question']); ?>">
+          <input type="text" name="faq_answer[]" placeholder="Answer" value="<?php echo htmlspecialchars($f['answer']); ?>">
+          <button type="button" class="admin-remove-btn" onclick="this.parentElement.remove()">✕</button>
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <button type="button" class="admin-add-btn" onclick="addFaqRow()">+ Add FAQ</button>
+  </div>
+
   <div class="admin-btn-row">
     <button class="btn btn-primary" type="submit">Save Changes</button>
     <a class="btn btn-outline" href="list.php">Cancel</a>
   </div>
 </form>
+
+<script>
+function addFaqRow() {
+  const wrap = document.getElementById('faq-rows');
+  const row = document.createElement('div');
+  row.className = 'admin-repeat-row faq-row';
+  row.innerHTML = `
+    <input type="text" name="faq_question[]" placeholder="Question">
+    <input type="text" name="faq_answer[]" placeholder="Answer">
+    <button type="button" class="admin-remove-btn" onclick="this.parentElement.remove()">✕</button>`;
+  wrap.appendChild(row);
+}
+</script>
+
 <?php include __DIR__ . '/../layout/admin_footer.php'; ?>

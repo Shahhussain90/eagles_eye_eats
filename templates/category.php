@@ -28,8 +28,14 @@ $rStmt->bind_param("i", $categoryId);
 $rStmt->execute();
 $restaurants = $rStmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
+$faqStmt = $con->prepare("SELECT question, answer FROM category_faqs WHERE category_id = ? ORDER BY sort_order ASC, id ASC");
+$faqStmt->bind_param("i", $categoryId);
+$faqStmt->execute();
+$faqs = $faqStmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
 $pageTitle = htmlspecialchars($category['name']) . ' in Karachi | Yaafta';
-$metaDesc  = htmlspecialchars($category['intro_content'] ?: ('Discover the best ' . $category['name'] . ' in Karachi.'));
+$metaDesc  = htmlspecialchars($category['meta_description'] ?: ($category['intro_content'] ?: ('Discover the best ' . $category['name'] . ' in Karachi.')));
+$metaKeywords = htmlspecialchars($category['meta_keywords'] ?: '');
 $canonical = BASE_URL . 'category/' . $category['slug'];
 ?>
 <!doctype html>
@@ -38,6 +44,9 @@ $canonical = BASE_URL . 'category/' . $category['slug'];
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="<?php echo $metaDesc; ?>" />
+  <?php if ($metaKeywords): ?>
+  <meta name="keywords" content="<?php echo $metaKeywords; ?>" />
+  <?php endif; ?>
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
    <link rel="icon" href="<?php echo BASE_URL; ?>files/images/favicon.svg" type="image/svg+xml">
@@ -48,6 +57,24 @@ $canonical = BASE_URL . 'category/' . $category['slug'];
   <link rel="manifest" href="<?php echo BASE_URL; ?>files/images/site.webmanifest">
   <title><?php echo $pageTitle; ?></title>
   <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css" />
+
+  <?php if ($faqs): ?>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      <?php foreach ($faqs as $i => $f): ?>
+      {
+        "@type": "Question",
+        "name": <?php echo json_encode($f['question']); ?>,
+        "acceptedAnswer": { "@type": "Answer", "text": <?php echo json_encode($f['answer']); ?> }
+      }<?php echo $i < count($faqs) - 1 ? ',' : ''; ?>
+      <?php endforeach; ?>
+    ]
+  }
+  </script>
+  <?php endif; ?>
 </head>
 <body>
 
@@ -105,6 +132,27 @@ $canonical = BASE_URL . 'category/' . $category['slug'];
         </div>
       </div>
     </section>
+
+    <?php if ($faqs): ?>
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Frequently Asked <span style="color:#00f5d4">Questions</span></h2>
+            <p class="section-subtitle">Common questions about <?php echo htmlspecialchars(strtolower($category['name'])); ?> in Karachi.</p>
+          </div>
+        </div>
+        <div class="faq-wrapper">
+          <?php foreach ($faqs as $i => $f): ?>
+            <details class="faq-item"<?php echo $i === 0 ? ' open' : ''; ?>>
+              <summary><?php echo htmlspecialchars($f['question']); ?></summary>
+              <p><?php echo nl2br(htmlspecialchars($f['answer'])); ?></p>
+            </details>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
   </main>
 
   <?php include __DIR__ . '/../files/layout/footer.php'; ?>
