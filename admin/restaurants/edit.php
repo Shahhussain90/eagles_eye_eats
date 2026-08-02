@@ -11,6 +11,7 @@ if (!$restaurantId) {
 $formError = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!csrf_verify()) { die('Invalid or expired form submission. Please go back and try again.'); }
     include __DIR__ . '/save_handler.php';
     if (!$formError) {
         if (!empty($uploadWarnings)) {
@@ -64,6 +65,7 @@ include __DIR__ . '/../layout/admin_header.php';
 <?php endif; ?>
 
 <form method="POST" enctype="multipart/form-data" class="admin-form">
+  <?php echo csrf_field(); ?>
   <input type="hidden" name="id" value="<?php echo $restaurantId; ?>">
   <?php include __DIR__ . '/form_fields.php'; ?>
   <div class="admin-btn-row">

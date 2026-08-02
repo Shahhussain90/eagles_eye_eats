@@ -2,7 +2,11 @@
 include_once __DIR__ . '/../../files/connection.php';
 include_once __DIR__ . '/../auth_check.php';
 
-$id = (int)($_GET['id'] ?? 0);
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !csrf_verify()) {
+    header('Location: list.php');
+    exit;
+}
+$id = (int)($_POST['id'] ?? 0);
 if ($id) {
     // restaurants.area_id has ON DELETE SET NULL, so restaurants aren't deleted,
     // just unlinked from this area — area_faqs cascade-delete automatically.

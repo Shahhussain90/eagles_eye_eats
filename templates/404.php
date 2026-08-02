@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Page Not Found | Yaafta</title>
+   <link rel="icon" href="<?php echo BASE_URL; ?>files/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo BASE_URL; ?>files/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo BASE_URL; ?>files/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_URL; ?>files/images/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL; ?>files/images/yaafta_favicon.ico">
+  <link rel="manifest" href="<?php echo BASE_URL; ?>files/images/site.webmanifest">
   <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css" />
 </head>
 <body>

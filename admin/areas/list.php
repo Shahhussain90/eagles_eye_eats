@@ -32,7 +32,11 @@ include __DIR__ . '/../layout/admin_header.php';
           <td><?php echo (int)$a['restaurant_count']; ?></td>
           <td>
             <a href="edit.php?id=<?php echo $a['id']; ?>">Edit</a> ·
-            <a href="delete.php?id=<?php echo $a['id']; ?>" onclick="return confirm('Delete this area? Restaurants in it will lose their area link, not be deleted.');" style="color:#d32f2f;">Delete</a>
+            <form method="POST" action="delete.php" style="display:inline;" onsubmit="return confirm('Delete this area? Restaurants in it will lose their area link, not be deleted.');">
+              <?php echo csrf_field(); ?>
+              <input type="hidden" name="id" value="<?php echo $a['id']; ?>">
+              <button type="submit" style="background:none;border:none;color:#d32f2f;cursor:pointer;padding:0;font:inherit;text-decoration:underline;">Delete</button>
+            </form>
           </td>
         </tr>
       <?php endforeach; ?>

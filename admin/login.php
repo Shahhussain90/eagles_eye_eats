@@ -8,22 +8,26 @@ if (isset($_SESSION['admin_id'])) {
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username'] ?? '');
-    $password = $_POST['password'] ?? '';
+    if (!rate_limit_check('admin_login', 5, 300)) {
+        $error = 'Too many login attempts. Please wait a few minutes and try again.';
+    } else {
+        $username = trim($_POST['username'] ?? '');
+        $password = $_POST['password'] ?? '';
 
-    $stmt = $con->prepare("SELECT id, username, password_hash FROM admins WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $admin = $stmt->get_result()->fetch_assoc();
+        $stmt = $con->prepare("SELECT id, username, password_hash FROM admins WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $admin = $stmt->get_result()->fetch_assoc();
 
-    if ($admin && password_verify($password, $admin['password_hash'])) {
-        session_regenerate_id(true);
-        $_SESSION['admin_id'] = $admin['id'];
-        $_SESSION['admin_username'] = $admin['username'];
-        header('Location: dashboard.php');
-        exit;
+        if ($admin && password_verify($password, $admin['password_hash'])) {
+            session_regenerate_id(true);
+            $_SESSION['admin_id'] = $admin['id'];
+            $_SESSION['admin_username'] = $admin['username'];
+            header('Location: dashboard.php');
+            exit;
+        }
+        $error = 'Invalid username or password.';
     }
-    $error = 'Invalid username or password.';
 }
 ?>
 <!doctype html>

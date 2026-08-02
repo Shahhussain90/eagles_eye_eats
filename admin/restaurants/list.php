@@ -38,7 +38,11 @@ include __DIR__ . '/../layout/admin_header.php';
           <td><code><?php echo htmlspecialchars($r['slug']); ?></code></td>
           <td>
             <a href="edit.php?id=<?php echo $r['id']; ?>">Edit</a> ·
-            <a href="delete.php?id=<?php echo $r['id']; ?>" onclick="return confirm('Delete this restaurant? This cannot be undone.');" style="color:#d32f2f;">Delete</a>
+            <form method="POST" action="delete.php" style="display:inline;" onsubmit="return confirm('Delete this restaurant? This cannot be undone.');">
+              <?php echo csrf_field(); ?>
+              <input type="hidden" name="id" value="<?php echo $r['id']; ?>">
+              <button type="submit" style="background:none;border:none;color:#d32f2f;cursor:pointer;padding:0;font:inherit;text-decoration:underline;">Delete</button>
+            </form>
           </td>
         </tr>
       <?php endforeach; ?>

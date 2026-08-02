@@ -8,6 +8,11 @@ if (!$user) {
     exit;
 }
 
+if (!rate_limit_check('submit_review', 10, 3600)) {
+    echo json_encode(['success' => false, 'error' => 'Too many review submissions. Please try again later.']);
+    exit;
+}
+
 $restaurantId = (int)($_POST['restaurant_id'] ?? 0);
 $rating = (int)($_POST['rating'] ?? 0);
 $recommendPct = (int)($_POST['recommend_pct'] ?? 0);

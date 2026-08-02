@@ -1,27 +1,31 @@
+<?php
+require_once 'connection.php';
 
-<?php 
-   require_once __DIR__ . '/connection.php';
+$statusMsg = '';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  if (isset($_POST['contact_btn'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contact_btn'])) {
+    $name    = trim($_POST['name'] ?? '');
+    $email   = trim($_POST['email'] ?? '');
+    $message = trim($_POST['message'] ?? '');
 
-
-    $sql = "INSERT INTO contact_messages (name, email, message) VALUES ('$name', '$email', '$message')";
-    if ($con->query($sql) === TRUE) {
-      echo "<script>alert('Message sent successfully!');</script>";
+    if ($name === '' || $email === '' || $message === '') {
+        $statusMsg = 'error';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $statusMsg = 'invalid_email';
     } else {
-      echo "<script>alert('Error: " . $con->error . "');</script>";
+        $stmt = $con->prepare(
+            "INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)"
+        );
+        $ip = $_SERVER['REMOTE_ADDR'] ?? null;
+        $stmt->bind_param("sss", $name, $email, $message);
+
+        $statusMsg = $stmt->execute() ? 'success' : 'error';
     }
 
-  }
-  }
-
-
-
-
+    // Redirect back to this same page (POST-redirect-GET pattern)
+    header("Location: " . $_SERVER['PHP_SELF'] . "?status=" . $statusMsg);
+    exit;
+}
 ?>
 
 
@@ -69,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
-     include __DIR__ . '/layout/header.php';
+    include __DIR__ . '/layout/header.php';
   ?>
 
     <section class="contact-page">
@@ -77,6 +81,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Heading -->
     <div class="contact-header">
+      <?php if (isset($_GET['status'])): ?>
+        <?php if ($_GET['status'] === 'success'): ?>
+          <p class="form-success">Thanks — your message has been sent!</p>
+        <?php elseif ($_GET['status'] === 'invalid_email'): ?>
+          <p class="form-error">Please enter a valid email address.</p>
+        <?php else: ?>
+          <p class="form-error">Something went wrong. Please try again.</p>
+        <?php endif; ?>
+      <?php endif; ?>
       <h1>Contact Eagles Eye Eats</h1>
       <p>
         Have a restaurant to list, a suggestion, or a partnership idea? 
@@ -88,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="contact-grid">
 
       <!-- FORM -->
-      <form class="contact-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+      <form class="contact-form" action="<?php echo BASE_URL; ?>files/contact.php" method="POST">
 
         <div class="form-group">
           <label>Your Name</label>
@@ -137,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </section>
   
 <?php
-    include_once __DIR__ . '/layout/footer.php';
+    include_once 'layout/footer.php';
     ?>
     <script src="../index.js"></script>
   </body>

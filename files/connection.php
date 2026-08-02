@@ -21,6 +21,22 @@ define('GOOGLE_CLIENT_ID', '64634114234-u6lhebqidqi3aij19q38vgthb7t1v3c3.apps.go
 define('UPLOAD_DIR', __DIR__ . '/uploads/');
 define('UPLOAD_URL', BASE_URL . 'files/uploads/');
 
+function csrf_token() {
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
+}
+
+function csrf_field() {
+    return '<input type="hidden" name="csrf_token" value="' . htmlspecialchars(csrf_token()) . '">';
+}
+
+function csrf_verify() {
+    $submitted = $_POST['csrf_token'] ?? '';
+    return !empty($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $submitted);
+}
+
 function current_user() {
     global $con;
     if (!isset($_SESSION['user_id'])) return null;

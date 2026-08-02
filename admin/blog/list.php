@@ -26,7 +26,11 @@ include __DIR__ . '/../layout/admin_header.php';
           <td><?php echo date('M j, Y', strtotime($p['published_at'])); ?></td>
           <td>
             <a href="edit.php?id=<?php echo $p['id']; ?>">Edit</a> ·
-            <a href="delete.php?id=<?php echo $p['id']; ?>" onclick="return confirm('Delete this blog post?');" style="color:#d32f2f;">Delete</a>
+            <form method="POST" action="delete.php" style="display:inline;" onsubmit="return confirm('Delete this blog post?');">
+              <?php echo csrf_field(); ?>
+              <input type="hidden" name="id" value="<?php echo $p['id']; ?>">
+              <button type="submit" style="background:none;border:none;color:#d32f2f;cursor:pointer;padding:0;font:inherit;text-decoration:underline;">Delete</button>
+            </form>
           </td>
         </tr>
       <?php endforeach; ?>

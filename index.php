@@ -931,7 +931,7 @@
             moderated before they go live.
           </p>
           <div class="eeat-card-footer">
-            <span class="eeat-pill">✓ No Paid Placements — Ever</span>
+            <span class="eeat-pill">✓ No Paid Placements Ever</span>
           </div>
         </div>
 
@@ -942,7 +942,7 @@
         <p>
           Found outdated information or a restaurant that has closed? 
           <a href="<?php echo BASE_URL; ?>files/contact" class="eeat-link">Let us know</a> 
-          — we aim to review and update flagged listings within 72 hours.
+           we aim to review and update flagged listings within 72 hours.
         </p>
       </div>
 

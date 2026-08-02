@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '../connection.php';
+include_once __DIR__ . '/../connection.php';
 header('Content-Type: application/json');
 
 $input = json_decode(file_get_contents('php://input'), true);
@@ -7,6 +7,11 @@ $credential = $input['credential'] ?? null;
 
 if (!$credential) {
     echo json_encode(['success' => false, 'error' => 'Missing credential']);
+    exit;
+}
+
+if (!rate_limit_check('google_callback', 15, 300)) {
+    echo json_encode(['success' => false, 'error' => 'Too many requests. Please try again shortly.']);
     exit;
 }
 
@@ -64,5 +69,6 @@ if ($existing) {
 }
 
 $_SESSION['user_id'] = $userId;
+session_regenerate_id(true);
 
 echo json_encode(['success' => true, 'redirect' => BASE_URL . 'files/profile']);

@@ -5,6 +5,7 @@ include_once __DIR__ . '/../auth_check.php';
 $formError = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!csrf_verify()) { die('Invalid or expired form submission. Please go back and try again.'); }
     $name = trim($_POST['name'] ?? '');
     $slug = trim($_POST['slug'] ?? '');
     if ($name === '' || $slug === '') {
@@ -47,6 +48,7 @@ include __DIR__ . '/../layout/admin_header.php';
 </div>
 <?php if ($formError): ?><div class="admin-flash" style="background:#fdecea;color:#d32f2f;"><?php echo htmlspecialchars($formError); ?></div><?php endif; ?>
 <form method="POST" class="admin-form">
+  <?php echo csrf_field(); ?>
   <?php include __DIR__ . '/form_fields.php'; ?>
   <div class="admin-btn-row">
     <button class="btn btn-primary" type="submit">Create Area</button>

@@ -8,6 +8,7 @@ if (!$catId) { header('Location: list.php'); exit; }
 $formError = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!csrf_verify()) { die('Invalid or expired form submission. Please go back and try again.'); }
     $name = trim($_POST['name'] ?? '');
     $slug = trim($_POST['slug'] ?? '');
     $intro = trim($_POST['intro_content'] ?? '');
@@ -38,6 +39,7 @@ include __DIR__ . '/../layout/admin_header.php';
 </div>
 <?php if ($formError): ?><div class="admin-flash" style="background:#fdecea;color:#d32f2f;"><?php echo htmlspecialchars($formError); ?></div><?php endif; ?>
 <form method="POST" class="admin-form">
+  <?php echo csrf_field(); ?>
   <input type="hidden" name="id" value="<?php echo $catId; ?>">
   <div class="admin-card">
     <label>Category Name *</label>

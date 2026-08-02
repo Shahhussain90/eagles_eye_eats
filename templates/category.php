@@ -40,6 +40,12 @@ $canonical = BASE_URL . 'category/' . $category['slug'];
   <meta name="description" content="<?php echo $metaDesc; ?>" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
+   <link rel="icon" href="<?php echo BASE_URL; ?>files/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo BASE_URL; ?>files/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo BASE_URL; ?>files/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_URL; ?>files/images/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL; ?>files/images/yaafta_favicon.ico">
+  <link rel="manifest" href="<?php echo BASE_URL; ?>files/images/site.webmanifest">
   <title><?php echo $pageTitle; ?></title>
   <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css" />
 </head>
